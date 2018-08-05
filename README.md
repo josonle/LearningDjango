@@ -1,5 +1,8 @@
+[TOC]
 ## LearningDjango
+[欢迎关注我的博客](http://blog.csdn.net/lzw2016)
 
+<a target="_blank" href="http://blog.csdn.net/lzw2016" >个人博客</a>
 ### Why should i decide to learn the Django?
 想学习python的web框架有一段时间了，自上次寒假开始就有这样的计划，也为此付之行动了一段时间，但倒是还是贪玩，慢慢就荒废了。而选择django也是综合考虑了一番，那就启程吧！！！
 
@@ -422,9 +425,12 @@ urlpatterns=[
 #可以在urls.py中定义
 app_name=blog
 #模板中
-<a href="{% url 'blog:blog_detail' 2%}">
+{%for blog in blogs%}
+                <li><a target="_blank" href="{%url 'blog:blog_detail' blog.id%}">{{blog.title}}</a></li>
+            {%endfor%}
 #仍旧对应 url(r'(?P<a_id>\d+)/$',views.article,name='blog_detail')
 ```
+**注意：模板文件里没什么py语法了，都是字符串。 blog.id 可以直接写在字符串里。**
 
 而 reverse()用法如下
 ```py
@@ -441,3 +447,510 @@ def art3(request):
 ```
 
 ### 第四天
+#### Templates管理
+- 自定义模板位置（在根目录下统一放置模板文件，集中管理）
+    + 根目录下新建 templates文件夹，并把原有 `./blog/templates/` 下文件拷贝进来
+    + 修改 settings.py 中 TEMPLATES 选项
+```
+'DIRS': [],
+'APP_DIRS': True,
+#改为
+'DIRS': [os.path.join(BASE_DIR,'templates'),],#指明在 ./templates 下寻找
+'APP_DIRS': False, #不允许默认寻找模板位置的方式
+```
+#### 重置后台管理模板
+你试一试自定义模板路径后，能否重新登录、管理后台。不能吧？
+有如下报错：
+```
+TemplateDoesNotExist at /admin/
+admin/index.html
+Request Method: GET
+Request URL:    http://127.0.0.1:8000/admin/
+Django Version: 1.11
+Exception Type: TemplateDoesNotExist
+Exception Value:    
+admin/index.html
+Exception Location: C:\Python36\lib\site-packages\django\template\loader.py in 
+...
+```
+大致意思就是找不到默认的后台管理的模板了，因为我们修改了模板路径。把它默认的模板copy到templates下就好了。
+> 默认在`Python36\Lib\site-packages\django\contrib\admin\templates`下，admin和registration两个。
+> 
+
+
+#### 静态文件的使用
+- 使用 bootstrap
+    + [从这里下载](https://getbootstrap.com/docs/4.0/getting-started/download/#compiled-css-and-js)
+- 自定义静态文件（css，js，image）位置
+    + 根目录下新建 static 文件夹
+    + 修改 settings.py 中 static 配置
+    + static 下再新建 css、js、images文件夹（应用多时可以分不同应用新建不同的静态文件夹）
+    + 把先前下载的文件解压到对应文件下
+```
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.11/howto/static-files/
+
+STATIC_URL = '/static/'#默认时每个app下的static中寻找
+#增加
+STATICFILES_DIRS=[os.path.join(BASE_DIR，'static'),]#改为在根目录下static中寻找
+```
+
+没错，这就类似 templates 目录的配置。指明静态文件从根目录下的 static 文件夹开始找。
+
+- 静态文件如何在模板中应用？
+
+在模板中该如何写呢？通过模板标签`{%static %}`，如 `{%static 'css/bootstrap.min.css'%}`，这相当于 `http://127.0.0.1:8000/static/css/bootstrap.min.css`
+这里我们把博客分成大致三个部分：首，文体，尾。分别对应 header.html,base.html,footer.html.
+***
+##### 修改原有base.html
+```py
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewpoint" content="width=device-width,initial-scale=1">
+    <title>{%block title%}{%endblock%}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+
+</head>
+<body>
+    {%include 'header.html'%}
+    <div class="container">
+        {%block content%}{%endblock%}
+    </div>
+    {%include 'footer.html'%}
+    {%block javascript%}{%endblock%}
+</body>
+</html>
+```
+##### 添加head.html footer.html
+```py
+#head.html
+{% load staticfiles %}
+<div class="container">
+    <nav class="navbar navbar-default" role="navigation" >
+        <div class="navbar-header">
+            <a href="http://blog.csdn.net/lzw2016" class="navbar-brand"><img src="{%static 'images/logo.png' %}" width="100px"></a>
+        </div>  
+        <div>
+            <ul class="nav navbar-nav" role="navigation">
+                <li><a href="{%url 'blog:blog_title'%}">博客</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#">登录</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+#footer.html
+<div class="container">
+    <hr>
+    <p class="text-center">JosonLee's blog <a href="http://blog.csdn.net/lzw2016">点这里</a></p>
+</div>
+
+```
+
+***
+你能看到 模板中出现了 `{% load staticfiles %}` ,`{% static 'css/bootstrap.css' %}` 。后者前面已经解释过了，而前者就是为了申明引入静态文件(必须的)，指明静态文件位置从何找起，避免了硬编码（每次引用都必须指明明确位置）。
+
+其次是`{%include "header.html"%}`，指明这里包含header.html这个模板文件。
+
+#### 总结
+大致以下几点
+- templates路径设置
+- static路径设置
+- static模板标签使用
+    + {%load staticfiles%}
+    + {%sttic "某个静态文件位置(如css/bootstrap.min.css)"%}--->域名/static/css/bootstrap.min.css
+
+***
+***
+
+### 第五天
+#### 用户登录管理
+- 注册应用account
+- settings设置
+- url设置
+
+#### Tips
+> from . import views (这个**.**代表什么？？？)
+> 这个**.**指的是当前程序所在文件夹中的 __init__.py 
+> 也类似 Linux下的 **.** 表示当前目录，**..** 表示上一级目录，以此类推
+> **前提是一定要有 __init__.py ，否则不能用**
+
+account下新建forms.py，用以存放用户登录表单的各种类
+
+```py
+from django import forms
+
+class LoginForm(forms.Form):
+    username=forms.CharField()
+    password=forms.CharField(widget=forms.PasswordInput)
+    
+```
+
+login=LoginForm() 创建未绑定的对象
+
+dir(login)查看可用方法
+主要关注以下几种方法、属性
+
+- cleaned_data：以字典形式返回你注册的用户和密码
+- is_bound：判断用户是否绑定
+- is_vaild()：判断输入的用户和密码是否符合格式要求
+
+```py
+#Django交互模式下
+lf=LoginForm({'username':'lzw','password':123})
+
+In [24]: lf.data
+Out[24]: {'username': 'lzw', 'password': 123}
+
+In [25]: lf.is_bound
+Out[25]: True
+
+In [26]: lf.is_valid()
+Out[26]: True
+
+In [27]: lf.cleaned_data
+Out[27]: {'username': 'lzw', 'password': '123'}
+
+```
+
+- 编写用户登录的视图函数
+修改 account 应用下的 views.py
+```py
+from django.shortcuts import render
+from django.http import HttpResponse
+from django.contrib.auth import authenticate,login
+from .forms import LoginForm
+
+# Create your views here.
+
+def user_login(request):
+    if request.method=='POST':
+        login_form=LoginForm(request.POST)
+        if login_form.is_valid():#判断表单数据是否符合要求（比如不能为空之类的）
+            cd=login_form.cleaned_data
+            user=authenticate(username=cd['username'],password=cd['password'])
+
+            if user:
+                login(request,user)
+                return HttpResponse('Welcome Boys and Girls，you have logined successfully...')
+            else:
+                return HttpResponse('sorry,your input is error...')
+    if request.method=='GET':
+        login_form=LoginForm()
+        return render(request,'account/login.html',{'form':login_form})
+
+
+```
+#### 用户登录流程总结
+看上面的代码，大体能看出一点思路吧。
+
+1. 首先，Django 通过 urlconf 匹配到了登录请求，此时前端提交了一个 Get方式请求 Request，然后指向 user_login 函数
+2. 此时，因为是 Get 方式（request的method属性是Http请求的类型，字符串），所以指向 login.html（Response），又回到了前端
+3. 你先不必在意login.html，只要知道它在用户填写用户名、密码并点击登录按钮后，以Post方式发送了请求（Request）
+4. 再次指向了 user_login 函数，此时django 自带了一套登录处理的方法 `from django.contrib.auth import authenticate,login`，前者检验用户是否在网站注册过、输入用户名、密码是否正确，后者搭配使用，若验证通过就把用户ID保留在 session 中
+5. 完成后续 Response操作
+
+- 配置登录的URL路由
+在主 urls.py 下增添一个导向account 下 urls.py 的路由匹配
+```py
+url(r'^account/',include(account.urls,namespace='account',appname='account'))
+```
+
+account/urls.py
+```
+from django.conf.urls import url
+from django.contrib import admin
+from . import views
+
+urlpatterns=[
+    url(r'^login/$',views.user_login,name='user_login')
+]
+```
+
+- 增加登录界面
+templates/account/login.html
+```py
+{%extends 'base.html'%}
+{%block title%}登录{%endblock%}
+
+{%block content%}
+<div class="row text-center vertical-middle-sm">
+    <h1>Login</h1>
+    <p>input your username and password</p>
+    <form action="." class="form-horizontal" method="post">
+        {%csrf_token%}
+        {{form.as_p}}
+        <input type="submit" value="Login">
+    </form>
+</div>
+{%endblock%}
+```
+
+`{%csrf_token%}` 这个必须有，只要在 form 标签内就 OK。保证了前端可以通过 POST 方式提交数据。
+`{{form.as_p}}` 实例对象的 as_p方法，使得表单数据呈现为一系列p标签，类似有 as_ul、as_table。
+
+- 结果展示
+我在admin后台管理新创建了一个名lzw的用户
+![Alt text](D:\火狐软件下载目录\Markdown汇总\MD图片\login1.jpg "Login")
+你可以如箭头所示，修改前端head.html的登录所指向的链接，也达到如此效果
+![Alt text](D:\火狐软件下载目录\Markdown汇总\MD图片\login2.png "Login")
+### 第六天
+
+#### 今日Tips
+> <a target="_blank" href="{%url 'blog:blog_detail' blog.id%}">
+> <a target="_blank" href="/blog/{{blog.id}}">
+> 两种写法都可
+
+> render_to_response()可以简化render()，不需要request参数
+> model.objects.get()和model.objects.filter()，后者返回是满足搜索条件的对象列表
+> 
+> ？？？ 含有外键ForeignField时，搜索该如何写？？？
+> 如：author=models.ForeignKey(User,related_name="blog_posts")
+> objects.get(author__???='JosonLee')双下划綫
+
+
+
+#### 用户注册管理
+总不能别人访问网站都得你一个个手动输入、注册用户吧。Django也同样提供了一套对应的处理方法。
+
+- 先编写注册表单类
+
+类似登录的表单类，继承于 forms.ModelForm(不同于Form，该类型表单会对数据库修改并写入数据库)
+
+```py
+from django import  forms
+from django.contrib.auth.models import User
+#注册表单
+class RegistrationForm(forms.ModelForm):
+    password=forms.CharField(label='Password',widget=forms.PasswordInput)
+    password1=forms.CharField(label='Confirm Password',widget=forms.PasswordInput)
+    #用以检验前后输入密码是否相同
+    class Meta:
+        model=User#指明表单内容写入User这个表中
+        fields=("username","email")#指明只需要User中的用户名和邮箱两个字段
+    def clean_password1(self):#内置函数，用于检验两个密码是否一致，该动作在执行is_valid()时执行
+        cd=self.cleaned_data
+        if cd['password']!=cd['password1']:
+            raise forms.ValidationError('Password not match')
+        return cd['password1']
+```
+**注意：以 `clean+属性名称` 命名的所创建的方法，会在对象执行is_valid()时执行**
+
+##### Tips：ValueError: ModelForm has no model class specified
+具体错误信息如下：
+>   File "D:\PyCharm 2017.3\PyProjects\LearningDjango\mysite\account\views.py", line 49, in register
+    
+>    user_form = RegistrationForm()
+  
+>  File "C:\Python36\lib\site-packages\django\forms\models.py", line 280, in __init__
+    
+>    raise ValueError('ModelForm has no model class specified.')
+
+> ValueError: ModelForm has no model class specified.
+
+我百度了一番，就是在定义表单类时，继承自ModelForm的Form，没有指明我的model。
+```py
+class Meta:
+    model=你的model
+```
+然后，我看了半天，没错model被我打成了mdel（我去 (⇀‸↼‶)。
+
+- 编写对应的视图函数
+
+用户注册的流程和登录是一样的，你可以返回去看看上一篇文章。
+
+```py
+def register(request):
+    if request.method=='POST':
+        user_form=RegistrationForm(request.POST)
+        if user_form.is_valid():
+            #ModelForm类及其子类都有save方法，用于把数据写入数据库
+            new_user=user_form.save(commit=False)#commit=False：创建对象但并不写入数据库，因为下面还要设置密码，避免再一次写入效率降低
+            new_user.set_password(user_form.cleaned_data['password'])
+            new_user.save()
+            return HttpResponse('register successfully')
+        else:
+            return HttpResponse("sorry,you can't register")
+    else:
+        user_form=RegistrationForm()
+        return render(request,'account/register.html',{'form':user_form})
+        
+```
+
+- 前端模板编写
+templates/account/register.html
+
+```py
+{%extends 'base.html'%}
+
+{%block title%}用户注册{%endblock%}
+
+{%load staticfiles%}
+
+{%block content%}
+<div class="row text-center vertical-middle-sm">
+    <h1>注册</h1>
+    <p>如果你已经注册过，请点击 <strong><a href="/account/login/">登录</a></strong></p>
+    <p>否则请注册</p>
+    <form action="." class="form-horizontal" method="post">
+        {%csrf_token%}
+        <div class="form-group">
+            <label for="{{form.username.id_for_label}}" class="col-md-5 control-label">用户名</label>
+            <div class="col-md-6 text-left">{{form.username}}</div>
+        </div>
+        <div class="form-group">
+            <label for="{{form.email.id_for_label}}" class="col-md-5 control-label">邮箱</label>
+            <div class="col-md-6 text-left">{{form.email}}</div>
+        </div>
+        <div class="form-group">
+            <label for="{{form.password.id_for_label}}" class="col-md-5 control-label">密码</label>
+            <div class="col-md-6 text-left">{{form.password}}</div>
+        </div>
+        <div class="form-group">
+            <label for="{{form.password.id_for_label}}" class="col-md-5 control-label">确认密码</label>
+            <div class="col-md-6 text-left">{{form.password1}}</div>
+        </div>
+        <input type="submit" class="btn btn-primary" value="REGISTER">
+    </form>
+</div>
+{%endblock%}
+```
+你同样可以在头模板（head.html）处添加注册选项
+- 配置url
+`url(r'^register/&',views.register,name='user_register')`
+
+尝试一下，刷新后注册，成功了，如图。
+![如图](D:\火狐软件下载目录\Markdown汇总\MD图片\register.png )
+
+Alt+Shit+6:Footnote 
+
+### 第七天
+#### 增加更多注册内容
+首先，Django自带的User数据表所含有的字段有限，有可能没有你想要的注册信息，你也可以在`django/contrib/auth/models`下查看,代码如下：
+
+```py
+class User(AbstractUser):
+    """
+    Users within the Django authentication system are represented by this
+    model.
+
+    Username, password and email are required. Other fields are optional.
+    """
+    class Meta(AbstractUser.Meta):
+        swappable = 'AUTH_USER_MODEL'
+
+```
+没错，User 继承自 AbstractUser，而这个类也在同一文件下，它包含以下字段
+```py
+    username = models.CharField(
+        _('username'),
+        max_length=150,
+        unique=True,
+        help_text=_('Required. 150 characters or fewer. Letters, digits and @/./+/-/_ only.'),
+        validators=[username_validator],
+        error_messages={
+            'unique': _("A user with that username already exists."),
+        },
+    )
+    first_name = models.CharField(_('first name'), max_length=30, blank=True)
+    last_name = models.CharField(_('last name'), max_length=30, blank=True)
+    email = models.EmailField(_('email address'), blank=True)
+    is_staff = models.BooleanField(
+        _('staff status'),
+        default=False,
+        help_text=_('Designates whether the user can log into this admin site.'),
+    )
+    is_active = models.BooleanField(
+        _('active'),
+        default=True,
+        help_text=_(
+            'Designates whether this user should be treated as active. '
+            'Unselect this instead of deleting accounts.'
+        ),
+    )
+    date_joined = models.DateTimeField(_('date joined'), default=timezone.now)
+
+```
+现在你想获取注册用户的手机号，那就只能自己创建一张表，而这张表也和User一对一关联。
+
+#### 实现流程如下：
+
+1. 修改 account/models.py，增加一张 UserProfile 表[^2]
+2. 对应增加表单类 UserProfileForm [^3]
+3. 修改对应的视图函数[^4]
+
+[^2]: account/models.py
+```py
+from django.db import models
+from django.contrib.auth.models import User
+
+class UserProfile(models.Model):
+    user=models.OneToOneField(User,unique=True)#通过user字段一对一关联User
+    phone=models.CharField(max_length=20,null=True)
+    birth=models.DateField(blank=True,null=True)#blank=True表示可为空（不必填写）
+
+    def __str__(self):
+        return 'user %s'%self.user.username
+```
+[^3]: account/forms.py
+```py
+from .models import UserProfile
+#新增注册选项
+class UserProfileForm(forms.ModelForm):
+    class Meta:
+        model=UserProfile
+        fields=('phone','birth')
+```
+[^4]: 在register.html中类似增加如下内容
+```py
+<div class="form-group">
+            <label for="{{ profile.phone.id_for_label }}" class="col-md-5 control-label">手机号</label>
+            <div class="col-md-6 text-left">{{ profile.phone }}</div>
+        </div>
+        <div class="form-group">
+            <label for="{{ profile.birth.id_for_label }}" class="col-md-5 control-label">出生日期</label>
+            <div class="col-md-6 text-left">{{ profile.birth }}</div>
+```
+
+![text](D:\火狐软件下载目录\Markdown汇总\MD图片\moreregister.png )
+
+#### 修改后台管理界面
+类似 blog/admin.py ,修改account/admin.py
+```py
+from django.contrib import admin
+from .models import UserProfile
+
+class UserprofileAdmin(admin.ModelAdmin):
+    list_display=['user','phone','birth']#以列表形式展示
+    list_filter=['phone',]#过滤器字段
+admin.site.register(UserProfile,UserprofileAdmin)
+```
+
+#### 注册结果
+对了，**这里有个地方要注意：出生日期的格式类似1998-2-2**。我输了19980202，页面返回的是“无法注册”，初步判断可能是is_valid没通过。Print大法好，你可以 类似这样`return HttpResponse("抱歉，无法注册，请检查输入信息是否正确%s,%s"%(user_form.is_valid(),userprofile_form.is_valid()))` ，一步一步来找bug。
+
+![Alt text](D:\火狐软件下载目录\Markdown汇总\MD图片\moreregister1.png "Optional title")
+![Alt text](D:\火狐软件下载目录\Markdown汇总\MD图片\moreregister2.png "Optional title")                                                                                                                                                       
+
+***
+
+### 第八天
+#### Models字段属性类型
+- CharField：保存字符串，一定要申明字符串最大长度
+- TextField：类似于CharField，但不限字数
+- URLField、EmailField：继承自CharField，包含了验证它们的值是否符合URL、Email的写法的方法。
+- FileField：接收上传的文件，同时保存到服务器
+- DateField、DateTimeField：保存时间（类似2018-5-30），
+
+
+
+
+
+
+
+

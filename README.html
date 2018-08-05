@@ -1,0 +1,1906 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><style>body {
+  max-width: 980px;
+  border: 1px solid #ddd;
+  outline: 1300px solid #fff;
+  margin: 16px auto;
+}
+
+body .markdown-body
+{
+  padding: 45px;
+}
+
+@font-face {
+  font-family: fontawesome-mini;
+  src: url(data:font/woff;charset=utf-8;base64,d09GRgABAAAAABE0AA8AAAAAHWwAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABHU1VCAAABWAAAADsAAABUIIslek9TLzIAAAGUAAAAQwAAAFY3d1HZY21hcAAAAdgAAACqAAACOvWLi0FjdnQgAAAChAAAABMAAAAgBtX/BGZwZ20AAAKYAAAFkAAAC3CKkZBZZ2FzcAAACCgAAAAIAAAACAAAABBnbHlmAAAIMAAABdQAAAjkYT9TNWhlYWQAAA4EAAAAMwAAADYQ6WvNaGhlYQAADjgAAAAfAAAAJAc6A1pobXR4AAAOWAAAACAAAAA0Kmz/7mxvY2EAAA54AAAAHAAAABwQPBJubWF4cAAADpQAAAAgAAAAIAEHC/NuYW1lAAAOtAAAAYQAAALxhQT4h3Bvc3QAABA4AAAAfgAAAMS3SYh9cHJlcAAAELgAAAB6AAAAhuVBK7x4nGNgZGBg4GIwYLBjYHJx8wlh4MtJLMljkGJgYYAAkDwymzEnMz2RgQPGA8qxgGkOIGaDiAIAJjsFSAB4nGNgZHZmnMDAysDAVMW0h4GBoQdCMz5gMGRkAooysDIzYAUBaa4pDA4Pwz+yMwf9z2KIYg5imAYUZgTJAQDcoQvQAHic7ZHNDYJAFIRnBXf94cDRIiyCKkCpwFCPJ092RcKNDoYKcN4+EmMPvpdvk539zQyAPYBCXEUJhBcCrJ5SQ9YLnLJe4qF5rdb+uWPDngNHTkta101pNyWa8lMhn6xx2dqUnW4q9YOIhAOOeueMSgsR/6ry+P7O5s6xVNg4chBsHUuFnWNJ8uZYwrw7chrsHXkODo7cB0dHOYCTY8kv0VE2WJKD6gOlWjsxAAB4nGNgQAMSEMgc9D8LhAESbAPdAHicrVZpd9NGFB15SZyELCULLWphxMRpsEYmbMGACUGyYyBdnK2VoIsUO+m+8Ynf4F/zZNpz6Dd+Wu8bLySQtOdwmpOjd+fN1czbZRJaktgL65GUmy/F1NYmjew8CemGTctRfCg7eyFlisnfBVEQrZbatx2HREQiULWusEQQ+x5ZmmR86FFGy7akV03KLT3pLlvjQb1V334aOsqxO6GkZjN0aD2yJVUYVaJIpj1S0qZlqPorSSu8v8LMV81QwohOImm8GcbQSN4bZ7TKaDW24yiKbLLcKFIkmuFBFHmU1RLn5IoJDMoHzZDyyqcR5cP8iKzYo5xWsEu20/y+L3mndzk/sV9vUbbkQB/Ijuzg7HQlX4RbW2HctJPtKFQRdtd3QmzZ7FT/Zo/ymkYDtysyvdCMYKl8hRArP6HM/iFZLZxP+ZJHo1qykRNB62VO7Es+gdbjiClxzRhZ0N3RCRHU/ZIzDPaYPh788d4plgsTAngcy3pHJZwIEylhczRJ2jByYCVliyqp9a6YOOV1WsRbwn7t2tGXzmjjUHdiPFsPHVs5UcnxaFKnmUyd2knNoykNopR0JnjMrwMoP6JJXm1jNYmVR9M4ZsaERCICLdxLU0EsO7GkKQTNoxm9uRumuXYtWqTJA/Xco/f05la4udNT2g70s0Z/VqdiOtgL0+lp5C/xadrlIkXp+ukZfkziQdYCMpEtNsOUgwdv/Q7Sy9eWHIXXBtju7fMrqH3WRPCkAfsb0B5P1SkJTIWYVYhWQGKta1mWydWsFqnI1HdDmla+rNMEinIcF8e+jHH9XzMzlpgSvt+J07MjLj1z7UsI0xx8m3U9mtepxXIBcWZ5TqdZlu/rNMfyA53mWZ7X6QhLW6ejLD/UaYHlRzodY3lBC5p038GQizDkAg6QMISlA0NYXoIhLBUMYbkIQ1gWYQjLJRjC8mMYwnIZhrC8rGXV1FNJ49qZWAZsQmBijh65zEXlaiq5VEK7aFRqQ54SbpVUFM+qf2WgXjzyhjmwFkiXyJpfMc6Vj0bl+NYVLW8aO1fAsepvH472OfFS1ouFPwX/1dZUJb1izcOTq/Abhp5sJ6o2qXh0TZfPVT26/l9UVFgL9BtIhVgoyrJscGcihI86nYZqoJVDzGzMPLTrdcuan8P9NzFCFlD9+DcUGgvcg05ZSVnt4KzV19uy3DuDcjgTLEkxN/P6VvgiI7PSfpFZyp6PfB5wBYxKZdhqA60VvNknMQ+Z3iTPBHFbUTZI2tjOBIkNHPOAefOdBCZh6qoN5E7hhg34BWFuwXknXKJ6oyyH7kXs8yik/Fun4kT2qGiMwLPZG2Gv70LKb3EMJDT5pX4MVBWhqRg1FdA0Um6oBl/G2bptQsYO9CMqdsOyrOLDxxb3lZJtGYR8pIjVo6Of1l6iTqrcfmYUl++dvgXBIDUxf3vfdHGQyrtayTJHbQNTtxqVU9eaQ+NVh+rmUfW94+wTOWuabronHnpf06rbwcVcLLD2bQ7SUiYX1PVhhQ2iy8WlUOplNEnvuAcYFhjQ71CKjf+r+th8nitVhdFxJN9O1LfR52AM/A/Yf0f1A9D3Y+hyDS7P95oTn2704WyZrqIX66foNzBrrblZugbc0HQD4iFHrY64yg18pwZxeqS5HOkh4GPdFeIBwCaAxeAT3bWM5lMAo/mMOT7A58xh0GQOgy3mMNhmzhrADnMY7DKHwR5zGHzBnHWAL5nDIGQOg4g5DJ4wJwB4yhwGXzGHwdfMYfANc+4DfMscBjFzGCTMYbCv6dYwzC1e0F2gtkFVoANTT1jcw+JQU2XI/o4Xhv29Qcz+wSCm/qjp9pD6Ey8M9WeDmPqLQUz9VdOdIfU3Xhjq7wYx9Q+DmPpMvxjLZQa/jHyXCgeUXWw+5++J9w/bxUC5AAEAAf//AA94nIVVX2hbZRQ/5/t7893s5ja9f7ouzdZ0TTqz3bRJmogbWya6bG6Cq0VbSV2ddIJjFtfIQHEig80Hda8yUN/0YQz8AyriiyD+xQd92R4HCnaCb3samnpumrpsCsLlfPf7zvedc37nL3CAtc/5W/wQZGA3tOBSY/g+TMjHmwzEoM1Q8+ZjRZY4oJhmBw5/YB6Za0yC5AkhlwA1A1yCBIBOwCII0Cj0U8BAMdUCzq05sKwkP7SlUY6fcJk4Fb/RyE79/6P5hjM/F4aZiXBoeMgzcqQ4Xi1hPqfDLG5FT+lchCVU3lYMyvuwhl1mqndQL0RsuloLywHtthLXI06OblTrhfWVnpSJ5+mwu/JdbtuN3IAnkW0LLMcRwaC7ktrlzridM6kVdyf9uO1UNBByI7JhwtG2sEwab07ORBeilWhqavJCqV0qzZTOl/7ZXQ5TbTcdcFelyGhhRDAQpdqp1FEX3w3cFTc1k9pJQkmm4ySCbSikxRP2QOfN+0tHS5MrpQuTU1Mk5nw0E5Xa0WvrOwDyGax9yB9ma6DAg82wHc43SAGTI4GjBWebOePAERFE8/AHaQpZASSTy8A4WwZiLQMQ82mFKATO0ILicRAoDm9p5P99E5b/fXG+kQYY3TYUuqmERWYoT0u/GNYL2q/4WB3LaVS+VynXsVYIcWw6DkCh3nX1D+VzlYN4LClF5yexSQos8exqZ3KVP+wtrC54u4Nznq6cq+xpMpUUnZ8FUYzE86ud0g28NOIv3Gj5/rmA3ABs7S/ywzFuQ4qyd6QxfNtiQIaEgp3w/entQg4Vcbqa16M5FfpeUB8t1+qeg7mI7cUyOe79wOk86gSxkVec4KPTX69++5x68Yubn5/F+w52z7u08sJX7fZXv8ekT/d2mILJxq6sn+SC6qEJknzLJCxyZEKwWVqYmAPBxBE/9DLeZiWHu7lcr/VytrCRuHojncNuTt9h46tmacmYisnSamdN2bZptcsmSysdVsy1PrOvOzF3xN64Rb937t/og9KHxYdcjIUqFAmIAHGHNzlns+RTPgeUYAQm9DwpNxfxbhhBHPaw3/gfTcXO2L+eJVIx5nsyGkvm9X4/f+bGkH45G0PaSjcMXTjcZyTvi3UdHoCDjQd3IDUVsgwYmUoJK/gp4JJxeRI0MKHZIkgynyIBqBTOUs6rOVCojvjZ4mCQz49ZMlMcp8QoYk6NoBfsxnJtsBohpa8iGJS+ZH7gU7NxME6cmF+t7cO9vB8d3jTWSct0ycW9ranXmolNDwmVkNnxe+8JtoztwS5rKJ0xWS95tQ/1zMYzg69MzUZnNtl1ofNbsml/OJm6f9wjRjpnu2o4MzHzn77IQkRd+1DjwMQ2pqSjGMMhyjrgTbBAKksuUm0iU7hI0aN2wOKOq7WYBSH0HGihj/jkiPxAfmwsEbfYrjMG+j3ij932Db/LV7I/xruNrhnroxjR9HRMb2nTvO0ZXOoHPk8H2ZhDPx93qcE/53sH5np/dkIP7zzhTVKdR/BAY/9ElkkR+A6lJGsqpJ4oQcTxpvBT3Kn58VkaJjgHyPEIws57xkaHh9KuVpDEpJZeMbZ5w/zBHi5NMQ4r5VphsFqID7TyB9eR4pX216c3AHxpdAwoqU9qg0ZJ6yVLKmMSz1iG2z27ifx18NkY0LPx1W/wCc2l5LrznrIsiKsqbmB78A9wIGx4tI8rjihVHJyY9pgMirenVq0yWg7Iw7eogG7ZgYM3qR9959A/fZkg6MnD/exlkmc+jWV4SB15XUR+eqC6l6ZmgPtN9z5JMfik05OV8ljylunJ4J+wA/FUaQSSKotsYsCWqaPBidBLcxkWx7XKFRIb45TGaEhjlF9uUVPqXOtcIwsXbBvfoZXIyRYFdkfnqjExH98xpnPczqzjX/uNdO1Y17Wpi5+6Ts8BXtjVFasp9KZ1mOiNbH65c5w6HgmyF2jFCZywM8mWjRc7T5Pmt0lRy7Y71+jYbpGyvwG4sH0XeJxjYGRgYADiwBB/53h+m68M3MwvgCIM1z5N/g6j///9v5H5BbMnkMvBwAQSBQCIcA9gAHicY2BkYGAO+p8FJF/8//v/F/MLBqAICuAFALYQB5kAeJxjfsHAwLwAiCNB+P9fbJjJmoGBMRUo/wKCAfO2EnQAAAAAANoBXgGcAgICVALaA1IDvAPkBAYEPARyAAEAAAANAF0ABAAAAAAAAgAUACQAcwAAAG4LcAAAAAB4nHWRzWrCQBSFT+pPqUIXLXTTzayKUohGKIibCoLuhbrrYtTRxCYZmYyKyz5Fd32HvlDfoO/QkziIFJtw9bvnnpl7ZwLgBt/wcHieGAf2UGd24Atcou+4RH3kuEweO66QXx1XyaHjGh6ROa7jFp/cwStfMVvhy7GHO+/e8QWuvcBxifqz4zL5xXGF/Oa4Sn53XMPE+3Bcx4P3M9DrvYmWoRWNQVN02kFXTPdCU4pSGQu5saE2meiLhU6timPtz3SSs9ypTCdqrJabWJoT5QQnymSRTkXgt0/UkUqVkVbN807ZdtmxdiEWRidi6HqItdErNbN+aO2612qd9sYAGmvsYRBhyUu0EGhQbfK/gzYCdElTOgSdB1eEFBIxFYkNV4RFJWPeZyyYpVQVHTHZx4y/yVGX2LGWFZri51TccUOn5B7nPefVCSPvGhVVwUl9znveO2KkhV8Wk82PZ8qwZf8OVcu1+fSmWCMw/HMOwXvKaysqM+p+cVuWag8tvv+c+xdd+4+teJxtjUEOwiAURJla24KliQfhUA2g/Sl+CKXx+loNrpzVezOLEY34Ron/0WhwQoszOvQYIKFwwQiNSbSBeO2SZ0tBP4j3zVjKNng32ZmtD1VVXCuOiw/pJ8S3WOU6l+K5UOTaDC4+2TjKMtN9KQf1ezLx/Sg/00FCvABHhjDjAAB4nGPw3sFwIihiIyNjX+QGxp0cDBwMyQUbGVidNjEwMmiBGJu5mBg5ICw+BjCLzWkX0wGgNCeQze60i8EBwmZmcNmowtgRGLHBoSNiI3OKy0Y1EG8XRwMDI4tDR3JIBEhJJBBs5mFi5NHawfi/dQNL70YmBhcADHYj9AAA) format('woff');
+}
+
+.markdown-body {
+  font-family: sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  color: #333333;
+  overflow: hidden;
+  font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  word-wrap: break-word;
+}
+
+.markdown-body a {
+  background: transparent;
+}
+
+.markdown-body a:active,
+.markdown-body a:hover {
+  outline: 0;
+}
+
+.markdown-body b,
+.markdown-body strong {
+  font-weight: bold;
+}
+
+.markdown-body mark {
+  background: #ff0;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body sub,
+.markdown-body sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+.markdown-body sup {
+  top: -0.5em;
+}
+.markdown-body sub {
+  bottom: -0.25em;
+}
+
+.markdown-body h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+.markdown-body img {
+  border: 0;
+}
+
+.markdown-body hr {
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  height: 0;
+}
+
+.markdown-body pre {
+  overflow: auto;
+}
+
+.markdown-body code,
+.markdown-body kbd,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+.markdown-body input {
+  color: inherit;
+  font: inherit;
+  margin: 0;
+}
+
+.markdown-body html input[disabled] {
+  cursor: default;
+}
+
+.markdown-body input {
+  line-height: normal;
+}
+
+.markdown-body input[type="checkbox"] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.markdown-body table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.markdown-body td,
+.markdown-body th {
+  padding: 0;
+}
+
+.markdown-body .codehilitetable {
+  border: 0;
+  border-spacing: 0;
+}
+
+.markdown-body .codehilitetable tr {
+  border: 0;
+}
+
+.markdown-body .codehilitetable pre,
+.markdown-body .codehilitetable div.codehilite {
+  margin: 0;
+}
+
+.markdown-body .linenos,
+.markdown-body .code,
+.markdown-body .codehilitetable td {
+  border: 0;
+  padding: 0;
+}
+
+.markdown-body td:not(.linenos) .linenodiv {
+  padding: 0 !important;
+}
+
+.markdown-body .code {
+  width: 100%;
+}
+
+.markdown-body .linenos div pre,
+.markdown-body .linenodiv pre,
+.markdown-body .linenodiv {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-left-radius: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  -moz-border-radius-topleft: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.markdown-body .code div pre,
+.markdown-body .code div {
+  border: 0;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-right-radius: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  -moz-border-radius-topright: 3px;
+  -moz-border-radius-bottomright: 3px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.markdown-body * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body input {
+  font: 13px Helvetica, arial, freesans, clean, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+  line-height: 1.4;
+}
+
+.markdown-body a {
+  color: #4183c4;
+  text-decoration: none;
+}
+
+.markdown-body a:hover,
+.markdown-body a:focus,
+.markdown-body a:active {
+  text-decoration: underline;
+}
+
+.markdown-body hr {
+  height: 0;
+  margin: 15px 0;
+  overflow: hidden;
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.markdown-body hr:before,
+.markdown-body hr:after {
+  display: table;
+  content: " ";
+}
+
+.markdown-body hr:after {
+  clear: both;
+}
+
+.markdown-body h1,
+.markdown-body h2,
+.markdown-body h3,
+.markdown-body h4,
+.markdown-body h5,
+.markdown-body h6 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  line-height: 1.1;
+}
+
+.markdown-body h1 {
+  font-size: 30px;
+}
+
+.markdown-body h2 {
+  font-size: 21px;
+}
+
+.markdown-body h3 {
+  font-size: 16px;
+}
+
+.markdown-body h4 {
+  font-size: 14px;
+}
+
+.markdown-body h5 {
+  font-size: 12px;
+}
+
+.markdown-body h6 {
+  font-size: 11px;
+}
+
+.markdown-body blockquote {
+  margin: 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body ol ol,
+.markdown-body ul ol {
+  list-style-type: lower-roman;
+}
+
+.markdown-body ul ul ol,
+.markdown-body ul ol ol,
+.markdown-body ol ul ol,
+.markdown-body ol ol ol {
+  list-style-type: lower-alpha;
+}
+
+.markdown-body dd {
+  margin-left: 0;
+}
+
+.markdown-body code,
+.markdown-body pre,
+.markdown-body samp {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: 12px;
+}
+
+.markdown-body pre {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body kbd {
+  background-color: #e7e7e7;
+  background-image: -moz-linear-gradient(#fefefe, #e7e7e7);
+  background-image: -webkit-linear-gradient(#fefefe, #e7e7e7);
+  background-image: linear-gradient(#fefefe, #e7e7e7);
+  background-repeat: repeat-x;
+  border-radius: 2px;
+  border: 1px solid #cfcfcf;
+  color: #000;
+  padding: 3px 5px;
+  line-height: 10px;
+  font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  display: inline-block;
+}
+
+.markdown-body>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+.markdown-body .headerlink {
+  font: normal 400 16px fontawesome-mini;
+  vertical-align: middle;
+  margin-left: -16px;
+  float: left;
+  display: inline-block;
+  text-decoration: none;
+  opacity: 0;
+  color: #333;
+}
+
+.markdown-body .headerlink:focus {
+  outline: none;
+}
+
+.markdown-body h1 .headerlink {
+  margin-top: 0.8rem;
+}
+
+.markdown-body h2 .headerlink,
+.markdown-body h3 .headerlink {
+  margin-top: 0.6rem;
+}
+
+.markdown-body h4 .headerlink {
+  margin-top: 0.2rem;
+}
+
+.markdown-body h5 .headerlink,
+.markdown-body h6 .headerlink {
+  margin-top: 0;
+}
+
+.markdown-body .headerlink:hover,
+.markdown-body h1:hover .headerlink,
+.markdown-body h2:hover .headerlink,
+.markdown-body h3:hover .headerlink,
+.markdown-body h4:hover .headerlink,
+.markdown-body h5:hover .headerlink,
+.markdown-body h6:hover .headerlink {
+  opacity: 1;
+  text-decoration: none;
+}
+
+.markdown-body h1 {
+  padding-bottom: 0.3em;
+  font-size: 2.25em;
+  line-height: 1.2;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h2 {
+  padding-bottom: 0.3em;
+  font-size: 1.75em;
+  line-height: 1.225;
+  border-bottom: 1px solid #eee;
+}
+
+.markdown-body h3 {
+  font-size: 1.5em;
+  line-height: 1.43;
+}
+
+.markdown-body h4 {
+  font-size: 1.25em;
+}
+
+.markdown-body h5 {
+  font-size: 1em;
+}
+
+.markdown-body h6 {
+  font-size: 1em;
+  color: #777;
+}
+
+.markdown-body p,
+.markdown-body blockquote,
+.markdown-body ul,
+.markdown-body ol,
+.markdown-body dl,
+.markdown-body table,
+.markdown-body pre,
+.markdown-body .admonition {
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.markdown-body hr {
+  height: 4px;
+  padding: 0;
+  margin: 16px 0;
+  background-color: #e7e7e7;
+  border: 0 none;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+  padding-left: 2em;
+}
+
+.markdown-body ul ul,
+.markdown-body ul ol,
+.markdown-body ol ol,
+.markdown-body ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.markdown-body li>p {
+  margin-top: 16px;
+}
+
+.markdown-body dl {
+  padding: 0;
+}
+
+.markdown-body dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.markdown-body dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+.markdown-body blockquote {
+  padding: 0 15px;
+  color: #777;
+  border-left: 4px solid #ddd;
+}
+
+.markdown-body blockquote>:first-child {
+  margin-top: 0;
+}
+
+.markdown-body blockquote>:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-body table {
+  display: block;
+  width: 100%;
+  overflow: auto;
+  word-break: normal;
+  word-break: keep-all;
+}
+
+.markdown-body table th {
+  font-weight: bold;
+}
+
+.markdown-body table th,
+.markdown-body table td {
+  padding: 6px 13px;
+  border: 1px solid #ddd;
+}
+
+.markdown-body table tr {
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.markdown-body table tr:nth-child(2n) {
+  background-color: #f8f8f8;
+}
+
+.markdown-body img {
+  max-width: 100%;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.markdown-body code,
+.markdown-body samp {
+  padding: 0;
+  padding-top: 0.2em;
+  padding-bottom: 0.2em;
+  margin: 0;
+  font-size: 85%;
+  background-color: rgba(0,0,0,0.04);
+  border-radius: 3px;
+}
+
+.markdown-body code:before,
+.markdown-body code:after {
+  letter-spacing: -0.2em;
+  content: "\00a0";
+}
+
+.markdown-body pre>code {
+  padding: 0;
+  margin: 0;
+  font-size: 100%;
+  word-break: normal;
+  white-space: pre;
+  background: transparent;
+  border: 0;
+}
+
+.markdown-body .codehilite {
+  margin-bottom: 16px;
+}
+
+.markdown-body .codehilite pre,
+.markdown-body pre {
+  padding: 16px;
+  overflow: auto;
+  font-size: 85%;
+  line-height: 1.45;
+  background-color: #f7f7f7;
+  border-radius: 3px;
+}
+
+.markdown-body .codehilite pre {
+  margin-bottom: 0;
+  word-break: normal;
+}
+
+.markdown-body pre {
+  word-wrap: normal;
+}
+
+.markdown-body pre code {
+  display: inline;
+  max-width: initial;
+  padding: 0;
+  margin: 0;
+  overflow: initial;
+  line-height: inherit;
+  word-wrap: normal;
+  background-color: transparent;
+  border: 0;
+}
+
+.markdown-body pre code:before,
+.markdown-body pre code:after {
+  content: normal;
+}
+
+/* Admonition */
+.markdown-body .admonition {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  position: relative;
+  border-radius: 3px;
+  border: 1px solid #e0e0e0;
+  border-left: 6px solid #333;
+  padding: 10px 10px 10px 30px;
+}
+
+.markdown-body .admonition table {
+  color: #333;
+}
+
+.markdown-body .admonition p {
+  padding: 0;
+}
+
+.markdown-body .admonition-title {
+  font-weight: bold;
+  margin: 0;
+}
+
+.markdown-body .admonition>.admonition-title {
+  color: #333;
+}
+
+.markdown-body .attention>.admonition-title {
+  color: #a6d796;
+}
+
+.markdown-body .caution>.admonition-title {
+  color: #d7a796;
+}
+
+.markdown-body .hint>.admonition-title {
+  color: #96c6d7;
+}
+
+.markdown-body .danger>.admonition-title {
+  color: #c25f77;
+}
+
+.markdown-body .question>.admonition-title {
+  color: #96a6d7;
+}
+
+.markdown-body .note>.admonition-title {
+  color: #d7c896;
+}
+
+.markdown-body .admonition:before,
+.markdown-body .attention:before,
+.markdown-body .caution:before,
+.markdown-body .hint:before,
+.markdown-body .danger:before,
+.markdown-body .question:before,
+.markdown-body .note:before {
+  font: normal normal 16px fontawesome-mini;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  line-height: 1.5;
+  color: #333;
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.markdown-body .admonition:before {
+  content: "\f056\00a0";
+  color: 333;
+}
+
+.markdown-body .attention:before {
+  content: "\f058\00a0";
+  color: #a6d796;
+}
+
+.markdown-body .caution:before {
+  content: "\f06a\00a0";
+  color: #d7a796;
+}
+
+.markdown-body .hint:before {
+  content: "\f05a\00a0";
+  color: #96c6d7;
+}
+
+.markdown-body .danger:before {
+  content: "\f057\00a0";
+  color: #c25f77;
+}
+
+.markdown-body .question:before {
+  content: "\f059\00a0";
+  color: #96a6d7;
+}
+
+.markdown-body .note:before {
+  content: "\f040\00a0";
+  color: #d7c896;
+}
+
+.markdown-body .admonition::after {
+  content: normal;
+}
+
+.markdown-body .attention {
+  border-left: 6px solid #a6d796;
+}
+
+.markdown-body .caution {
+  border-left: 6px solid #d7a796;
+}
+
+.markdown-body .hint {
+  border-left: 6px solid #96c6d7;
+}
+
+.markdown-body .danger {
+  border-left: 6px solid #c25f77;
+}
+
+.markdown-body .question {
+  border-left: 6px solid #96a6d7;
+}
+
+.markdown-body .note {
+  border-left: 6px solid #d7c896;
+}
+
+.markdown-body .admonition>*:first-child {
+  margin-top: 0 !important;
+}
+
+.markdown-body .admonition>*:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* progress bar*/
+.markdown-body .progress {
+  display: block;
+  width: 300px;
+  margin: 10px 0;
+  height: 24px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #ededed;
+  position: relative;
+  box-shadow: inset -1px 1px 3px rgba(0, 0, 0, .1);
+}
+
+.markdown-body .progress-label {
+  position: absolute;
+  text-align: center;
+  font-weight: bold;
+  width: 100%; margin: 0;
+  line-height: 24px;
+  color: #333;
+  text-shadow: 1px 1px 0 #fefefe, -1px -1px 0 #fefefe, -1px 1px 0 #fefefe, 1px -1px 0 #fefefe, 0 1px 0 #fefefe, 0 -1px 0 #fefefe, 1px 0 0 #fefefe, -1px 0 0 #fefefe, 1px 1px 2px #000;
+  -webkit-font-smoothing: antialiased !important;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.markdown-body .progress-bar {
+  height: 24px;
+  float: left;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #96c6d7;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .5), inset 0 -1px 0 rgba(0, 0, 0, .1);
+  background-size: 30px 30px;
+  background-image: -webkit-linear-gradient(
+    135deg, rgba(255, 255, 255, .4) 27%,
+    transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%,
+    transparent 77%, transparent
+  );
+  background-image: -moz-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -ms-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: -o-linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+  background-image: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, .4) 27%, transparent 27%,
+    transparent 52%, rgba(255, 255, 255, .4) 52%,
+    rgba(255, 255, 255, .4) 77%, transparent 77%,
+    transparent
+  );
+}
+
+.markdown-body .progress-100plus .progress-bar {
+  background-color: #a6d796;
+}
+
+.markdown-body .progress-80plus .progress-bar {
+  background-color: #c6d796;
+}
+
+.markdown-body .progress-60plus .progress-bar {
+  background-color: #d7c896;
+}
+
+.markdown-body .progress-40plus .progress-bar {
+  background-color: #d7a796;
+}
+
+.markdown-body .progress-20plus .progress-bar {
+  background-color: #d796a6;
+}
+
+.markdown-body .progress-0plus .progress-bar {
+  background-color: #c25f77;
+}
+
+.markdown-body .candystripe-animate .progress-bar{
+  -webkit-animation: animate-stripes 3s linear infinite;
+  -moz-animation: animate-stripes 3s linear infinite;
+  animation: animate-stripes 3s linear infinite;
+}
+
+@-webkit-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@-moz-keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+@keyframes animate-stripes {
+  0% {
+    background-position: 0 0;
+  }
+
+  100% {
+    background-position: 60px 0;
+  }
+}
+
+.markdown-body .gloss .progress-bar {
+  box-shadow:
+    inset 0 4px 12px rgba(255, 255, 255, .7),
+    inset 0 -12px 0 rgba(0, 0, 0, .05);
+}
+
+/* Multimarkdown Critic Blocks */
+.markdown-body .critic_mark {
+  background: #ff0;
+}
+
+.markdown-body .critic_delete {
+  color: #c82829;
+  text-decoration: line-through;
+}
+
+.markdown-body .critic_insert {
+  color: #718c00 ;
+  text-decoration: underline;
+}
+
+.markdown-body .critic_comment {
+  color: #8e908c;
+  font-style: italic;
+}
+
+.markdown-body .headeranchor {
+  font: normal normal 16px fontawesome-mini;
+  line-height: 1;
+  display: inline-block;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.headeranchor:before {
+  content: '\e157';
+}
+
+.markdown-body .task-list-item {
+  list-style-type: none;
+}
+
+.markdown-body .task-list-item+.task-list-item {
+  margin-top: 3px;
+}
+
+.markdown-body .task-list-item input {
+  margin: 0 4px 0.25em -20px;
+  vertical-align: middle;
+}
+
+/* Media */
+@media only screen and (min-width: 480px) {
+  .markdown-body {
+    font-size:14px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .markdown-body {
+    font-size:16px;
+  }
+}
+
+@media print {
+  .markdown-body * {
+    background: transparent !important;
+    color: black !important;
+    filter:none !important;
+    -ms-filter: none !important;
+  }
+
+  .markdown-body {
+    font-size:12pt;
+    max-width:100%;
+    outline:none;
+    border: 0;
+  }
+
+  .markdown-body a,
+  .markdown-body a:visited {
+    text-decoration: underline;
+  }
+
+  .markdown-body .headeranchor-link {
+    display: none;
+  }
+
+  .markdown-body a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  .markdown-body abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  .markdown-body .ir a:after,
+  .markdown-body a[href^="javascript:"]:after,
+  .markdown-body a[href^="#"]:after {
+    content: "";
+  }
+
+  .markdown-body pre {
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+
+  .markdown-body pre,
+  .markdown-body blockquote {
+    border: 1px solid #999;
+    padding-right: 1em;
+    page-break-inside: avoid;
+  }
+
+  .markdown-body .progress,
+  .markdown-body .progress-bar {
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+
+  .markdown-body .progress {
+    border: 1px solid #ddd;
+  }
+
+  .markdown-body .progress-bar {
+    height: 22px;
+    border-right: 1px solid #ddd;
+  }
+
+  .markdown-body tr,
+  .markdown-body img {
+    page-break-inside: avoid;
+  }
+
+  .markdown-body img {
+    max-width: 100% !important;
+  }
+
+  .markdown-body p,
+  .markdown-body h2,
+  .markdown-body h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  .markdown-body h2,
+  .markdown-body h3 {
+    page-break-after: avoid;
+  }
+}
+</style><style>/*github*/
+.codehilite {background-color:#fff;color:#333333;}
+.codehilite .hll {background-color:#ffffcc;}
+.codehilite .c{color:#999988;font-style:italic}
+.codehilite .err{color:#a61717;background-color:#e3d2d2}
+.codehilite .k{font-weight:bold}
+.codehilite .o{font-weight:bold}
+.codehilite .cm{color:#999988;font-style:italic}
+.codehilite .cp{color:#999999;font-weight:bold}
+.codehilite .c1{color:#999988;font-style:italic}
+.codehilite .cs{color:#999999;font-weight:bold;font-style:italic}
+.codehilite .gd{color:#000000;background-color:#ffdddd}
+.codehilite .ge{font-style:italic}
+.codehilite .gr{color:#aa0000}
+.codehilite .gh{color:#999999}
+.codehilite .gi{color:#000000;background-color:#ddffdd}
+.codehilite .go{color:#888888}
+.codehilite .gp{color:#555555}
+.codehilite .gs{font-weight:bold}
+.codehilite .gu{color:#800080;font-weight:bold}
+.codehilite .gt{color:#aa0000}
+.codehilite .kc{font-weight:bold}
+.codehilite .kd{font-weight:bold}
+.codehilite .kn{font-weight:bold}
+.codehilite .kp{font-weight:bold}
+.codehilite .kr{font-weight:bold}
+.codehilite .kt{color:#445588;font-weight:bold}
+.codehilite .m{color:#009999}
+.codehilite .s{color:#dd1144}
+.codehilite .n{color:#333333}
+.codehilite .na{color:teal}
+.codehilite .nb{color:#0086b3}
+.codehilite .nc{color:#445588;font-weight:bold}
+.codehilite .no{color:teal}
+.codehilite .ni{color:purple}
+.codehilite .ne{color:#990000;font-weight:bold}
+.codehilite .nf{color:#990000;font-weight:bold}
+.codehilite .nn{color:#555555}
+.codehilite .nt{color:navy}
+.codehilite .nv{color:teal}
+.codehilite .ow{font-weight:bold}
+.codehilite .w{color:#bbbbbb}
+.codehilite .mf{color:#009999}
+.codehilite .mh{color:#009999}
+.codehilite .mi{color:#009999}
+.codehilite .mo{color:#009999}
+.codehilite .sb{color:#dd1144}
+.codehilite .sc{color:#dd1144}
+.codehilite .sd{color:#dd1144}
+.codehilite .s2{color:#dd1144}
+.codehilite .se{color:#dd1144}
+.codehilite .sh{color:#dd1144}
+.codehilite .si{color:#dd1144}
+.codehilite .sx{color:#dd1144}
+.codehilite .sr{color:#009926}
+.codehilite .s1{color:#dd1144}
+.codehilite .ss{color:#990073}
+.codehilite .bp{color:#999999}
+.codehilite .vc{color:teal}
+.codehilite .vg{color:teal}
+.codehilite .vi{color:teal}
+.codehilite .il{color:#009999}
+.codehilite .gc{color:#999;background-color:#EAF2F5}
+</style><title>README</title></head><body><article class="markdown-body"><div class="toc">
+<ul>
+<li><a href="#learningdjango">LearningDjango</a><ul>
+<li><a href="#why-should-i-decide-to-learn-the-django">Why should i decide to learn the Django?</a></li>
+<li><a href="#_1">第一天</a><ul>
+<li><a href="#lets-go">Let&rsquo;s go！！！</a></li>
+<li><a href="#_2">基本配置</a></li>
+<li><a href="#_3">运行项目</a></li>
+<li><a href="#_4">数据模型的确定及编写</a><ul>
+<li><a href="#blog-modelspy">切换到 blog 目录下，编写 models.py</a></li>
+<li><a href="#_5">创建超级管理员以便登录并发表网站</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#_6">第二天</a><ul>
+<li><a href="#url">视图的编写,模板的应用及URL的匹配</a></li>
+<li><a href="#viewsurlstemplates">总结views、urls、templates</a></li>
+</ul>
+</li>
+<li><a href="#513sublime">5.13sublime记录</a></li>
+<li><a href="#_7">第三天</a><ul>
+<li><a href="#_8">内容补充</a></li>
+<li><a href="#response">返回 Response 写法</a></li>
+</ul>
+</li>
+<li><a href="#_9">总结</a><ul>
+<li><a href="#url_1">对于 URL 设计思考</a></li>
+<li><a href="#url_2">URL反解</a></li>
+</ul>
+</li>
+<li><a href="#_10">第四天</a><ul>
+<li><a href="#templates">Templates管理</a></li>
+<li><a href="#_11">重置后台管理模板</a></li>
+<li><a href="#_12">静态文件的使用</a><ul>
+<li><a href="#basehtml">修改原有base.html</a></li>
+<li><a href="#headhtml-footerhtml">添加head.html footer.html</a></li>
+</ul>
+</li>
+<li><a href="#_13">总结</a></li>
+</ul>
+</li>
+<li><a href="#_14">第五天</a><ul>
+<li><a href="#_15">用户登录管理</a></li>
+<li><a href="#tips">Tips</a></li>
+<li><a href="#_16">用户登录流程总结</a></li>
+</ul>
+</li>
+<li><a href="#_17">第六天</a><ul>
+<li><a href="#tips_1">今日Tips</a></li>
+<li><a href="#_18">用户注册管理</a><ul>
+<li><a href="#tipsvalueerror-modelform-has-no-model-class-specified">Tips：ValueError: ModelForm has no model class specified</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h2 id="learningdjango">LearningDjango<a class="headerlink" href="#learningdjango" title="Permanent link"></a></h2>
+<p><a href="http://blog.csdn.net/lzw2016">欢迎关注我的博客</a></p>
+<p><a target="_blank" href="http://blog.csdn.net/lzw2016" >个人博客</a></p>
+<h3 id="why-should-i-decide-to-learn-the-django">Why should i decide to learn the Django?<a class="headerlink" href="#why-should-i-decide-to-learn-the-django" title="Permanent link"></a></h3>
+<p>想学习python的web框架有一段时间了，自上次寒假开始就有这样的计划，也为此付之行动了一段时间，但倒是还是贪玩，慢慢就荒废了。而选择django也是综合考虑了一番，那就启程吧！！！</p>
+<p>参考资料：</p>
+<blockquote>
+<p>《跟老齐学Python Django实战》</p>
+<p>《Django实践18课》</p>
+<p>参照追梦和刘江的blog</p>
+<p>官方文档</p>
+</blockquote>
+<p>环境配置：</p>
+<blockquote>
+<p>Python3.6
+django1.10</p>
+</blockquote>
+<h3 id="_1">第一天<a class="headerlink" href="#_1" title="Permanent link"></a></h3>
+<h4 id="lets-go">Let&rsquo;s go！！！<a class="headerlink" href="#lets-go" title="Permanent link"></a></h4>
+<ul>
+<li>创建项目Project
+命令行下使用 <code>django-admin startproject Project_name</code> ，这里我的项目是mysite</li>
+<li>创建应用APP
+命令行下使用 <code>django-admin startapp app_name</code> ，这里我的 app_name 是 blog<blockquote>
+<p>或者使用 <code>python manage.py startapp app_name</code>
+django-admin.py是安装django后有的，bin目录下，而项目目录下的manage.py封装了django-admin的操作
+</p>
+</blockquote>
+</li>
+</ul>
+<p>OK,查看刚刚创建的项目结构：
+  <img alt="" src="D:\火狐软件下载目录\Markdown汇总\MD图片\django001.png" />
+从图片可看出，生成了 <code>mysite</code>,<code>blog</code>文件夹和<code>manage.py</code>。
+再分别查看 <code>mysite</code>,<code>blog</code> 结构，如下图：
+  <img alt="" src="D:\火狐软件下载目录\Markdown汇总\MD图片\django002.png" />
+  <img alt="" src="D:\火狐软件下载目录\Markdown汇总\MD图片\django003.png" />
+结构解释：</p>
+<ul>
+<li>manage.py
+就是封装了一些命令的工具，如上面所述的django-admin。</li>
+<li>mysite 具有管理项目的功能<ul>
+<li>settings.py：项目初始化、参数配置等文件</li>
+<li>urls.py：路由配置文件，使得 url 能指向某个函数或视图（template）</li>
+<li>wsgi.py：提供底层的网络通信功能，可百度一下WSGI</li>
+<li><strong>init</strong>.py:使得mysite变成可以import的库</li>
+</ul>
+</li>
+<li>blog 创建的应用<ul>
+<li><em>init.py</em>:类似上面的</li>
+<li>admin.py:管理工具，如可以向管理增加新应用</li>
+<li>apps.py:没啥用</li>
+<li>models.py:定义应用的数据模型</li>
+<li>tests.py:测试用的</li>
+<li>views.py:定义视图函数、视图类</li>
+<li>migrations:存储数据库表结构的指令
+这里我们要明确，不止创建一个APP</li>
+</ul>
+</li>
+</ul>
+<h4 id="_2">基本配置<a class="headerlink" href="#_2" title="Permanent link"></a></h4>
+<p><div class="codehilite"><pre><span class="c1"># SECURITY WARNING: don&#39;t run with debug turned on in production!</span>
+<span class="n">DEBUG</span> <span class="o">=</span> <span class="bp">True</span>
+<span class="c1"># 开发模式DEBUG设置为True，运行时可以显示错误信息</span>
+<span class="c1"># 但生产环境必须修改为False</span>
+<span class="n">ALLOWED_HOSTS</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="c1">#填写主域名，使网站可被访问。开发模式下可为空</span>
+
+<span class="c1"># Application definition</span>
+<span class="c1"># 这里填入你创建的应用名，如blog，才能告诉django这是我们一伙的</span>
+<span class="n">INSTALLED_APPS</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s">&#39;django.contrib.admin&#39;</span><span class="p">,</span>
+    <span class="s">&#39;django.contrib.auth&#39;</span><span class="p">,</span>
+    <span class="s">&#39;django.contrib.contenttypes&#39;</span><span class="p">,</span>
+    <span class="s">&#39;django.contrib.sessions&#39;</span><span class="p">,</span>
+    <span class="s">&#39;django.contrib.messages&#39;</span><span class="p">,</span>
+    <span class="s">&#39;django.contrib.staticfiles&#39;</span><span class="p">,</span>
+    <span class="s">&#39;blog&#39;</span><span class="p">,</span>
+<span class="p">]</span>
+</pre></div>
+数据库配置,这里使用默认的SQLite。你可能还没看到SQLite的影子，稍等一会儿。
+<div class="codehilite"><pre><span class="c1"># Database</span>
+<span class="c1"># 可参考官方文档其余数据库配置</span>
+<span class="c1"># https://docs.djangoproject.com/en/1.11/ref/settings/#databases</span>
+
+<span class="n">DATABASES</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s">&#39;default&#39;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="s">&#39;ENGINE&#39;</span><span class="p">:</span> <span class="s">&#39;django.db.backends.sqlite3&#39;</span><span class="p">,</span>
+        <span class="s">&#39;NAME&#39;</span><span class="p">:</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">BASE_DIR</span><span class="p">,</span> <span class="s">&#39;db.sqlite3&#39;</span><span class="p">),</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+时区语言等
+<div class="codehilite"><pre><span class="n">LANGUAGE_CODE</span> <span class="o">=</span> <span class="s">&#39;zh-hans&#39;</span>
+
+<span class="n">TIME_ZONE</span> <span class="o">=</span> <span class="s">&#39;Asia/Shanghai&#39;</span>
+</pre></div></p>
+<h4 id="_3">运行项目<a class="headerlink" href="#_3" title="Permanent link"></a></h4>
+<p>命令行下 <code>python manage.py runserver</code>
+<img alt="" src="D:\火狐软件下载目录\Markdown汇总\MD图片\004.png" />
+打开http://127.0.0.1:8000/。
+<img alt="" src="D:\火狐软件下载目录\Markdown汇总\MD图片\005.png" />
+如图所示，成功踏出第一小步了！！！
+这时你会发现 mysite 根目录下生成了 db.sqlite3 文件，这就是我们的数据库了。</p>
+<h4 id="_4">数据模型的确定及编写<a class="headerlink" href="#_4" title="Permanent link"></a></h4>
+<p>我们搭建一个web项目前，要明确需要实现那些功能，对吧。而model也就对应这些功能。
+我们这里只是简单编写博客，只需要管理博客的类就好了。</p>
+<h5 id="blog-modelspy">切换到 blog 目录下，编写 models.py<a class="headerlink" href="#blog-modelspy" title="Permanent link"></a></h5>
+<p><div class="codehilite"><pre><span class="kn">from</span> <span class="nn">django.db</span> <span class="kn">import</span> <span class="n">models</span>
+<span class="kn">from</span> <span class="nn">django.utils</span> <span class="kn">import</span> <span class="n">timezone</span>
+<span class="kn">from</span> <span class="nn">django.contrib.auth.models</span> <span class="kn">import</span> <span class="n">User</span>
+
+<span class="c1"># Create your models here.</span>
+
+<span class="k">class</span> <span class="nc">BlogArticles</span><span class="p">(</span><span class="n">models</span><span class="o">.</span><span class="n">Model</span><span class="p">):</span><span class="c1">#继承自models.Model</span>
+    <span class="c1">#字段和其属性</span>
+    <span class="n">title</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">30</span><span class="p">)</span>
+    <span class="n">author</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">User</span><span class="p">,</span><span class="n">related_name</span><span class="o">=</span><span class="s">&quot;blog_posts&quot;</span><span class="p">)</span>
+    <span class="n">body</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">()</span>
+    <span class="n">publish</span><span class="o">=</span><span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="n">timezone</span><span class="o">.</span><span class="n">now</span><span class="p">)</span>
+
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="c1">#按照publish逆顺序显示</span>
+        <span class="n">ordering</span><span class="o">=</span><span class="p">(</span><span class="s">&quot;-publish&quot;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="c1">#为了在页面中不单调显示，而显示文章标题</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">title</span>
+</pre></div>
+首先要明确，在Django中不需直接编写SQL语句，django能完成相应的数据库操作。</p>
+<p>你能从代码中看到我们定义了 title、author等属性，在数据库表中把它们称作<strong>字段</strong>。而字段又有属性，形如 CharField() 。</p>
+<p>注意，ordering 必须是列表或元组，要有逗号。</p>
+<ul>
+<li>建立数据库表
+命令行下<code>python manage.py makemigrations</code><blockquote>
+<p>PS D:\PyCharm 2017.3\PyProjects\LearningDjango\mysite&gt; python3 manage.py makemigrations
+Migrations for &lsquo;blog&rsquo;:
+  blog\migrations\0001_initial.py
+    -Create model BlogArticles</p>
+</blockquote>
+</li>
+</ul>
+<p>查看一下00001_initial.py，可发现,就是定义了一般的数据库表和操作方式。</p>
+<div class="codehilite"><pre>        <span class="n">migrations</span><span class="o">.</span><span class="n">CreateModel</span><span class="p">(</span>
+            <span class="n">name</span><span class="o">=</span><span class="s">&#39;BlogArticles&#39;</span><span class="p">,</span>
+            <span class="n">fields</span><span class="o">=</span><span class="p">[</span>
+                <span class="p">(</span><span class="s">&#39;id&#39;</span><span class="p">,</span> <span class="n">models</span><span class="o">.</span><span class="n">AutoField</span><span class="p">(</span><span class="n">auto_created</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">primary_key</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">serialize</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">verbose_name</span><span class="o">=</span><span class="s">&#39;ID&#39;</span><span class="p">)),</span>
+                <span class="p">(</span><span class="s">&#39;title&#39;</span><span class="p">,</span> <span class="n">models</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">max_length</span><span class="o">=</span><span class="mi">30</span><span class="p">)),</span>
+                <span class="p">(</span><span class="s">&#39;body&#39;</span><span class="p">,</span> <span class="n">models</span><span class="o">.</span><span class="n">TextField</span><span class="p">()),</span>
+                <span class="p">(</span><span class="s">&#39;publish&#39;</span><span class="p">,</span> <span class="n">models</span><span class="o">.</span><span class="n">DateTimeField</span><span class="p">(</span><span class="n">default</span><span class="o">=</span><span class="n">django</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">timezone</span><span class="o">.</span><span class="n">now</span><span class="p">)),</span>
+                <span class="p">(</span><span class="s">&#39;author&#39;</span><span class="p">,</span> <span class="n">models</span><span class="o">.</span><span class="n">ForeignKey</span><span class="p">(</span><span class="n">on_delete</span><span class="o">=</span><span class="n">django</span><span class="o">.</span><span class="n">db</span><span class="o">.</span><span class="n">models</span><span class="o">.</span><span class="n">deletion</span><span class="o">.</span><span class="n">CASCADE</span><span class="p">,</span> <span class="n">related_name</span><span class="o">=</span><span class="s">&#39;blog_posts&#39;</span><span class="p">,</span> <span class="n">to</span><span class="o">=</span><span class="n">settings</span><span class="o">.</span><span class="n">AUTH_USER_MODEL</span><span class="p">)),</span>
+            <span class="n">options</span><span class="o">=</span><span class="p">{</span>
+                <span class="s">&#39;ordering&#39;</span><span class="p">:</span> <span class="p">(</span><span class="s">&#39;-publish&#39;</span><span class="p">,),</span>
+            <span class="p">},</span>
+    <span class="p">]</span>
+</pre></div>
+
+<ul>
+<li>
+<p>创建数据库
+命令行下 <code>python manage.py migrate</code>， OK，模型对应的数据库就创建好了。</p>
+</li>
+<li>
+<p>在 admin.py 中注册该数据模型
+<div class="codehilite"><pre><span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
+<span class="c1"># 引入blog模型</span>
+<span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">BlogArticles</span>
+<span class="c1"># Register your models here.</span>
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">BlogArticles</span><span class="p">)</span><span class="c1">#注册</span>
+</pre></div></p>
+</li>
+</ul>
+<p>你也能在admin.py增加一些内容
+<div class="codehilite"><pre><span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
+<span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">BlogArticles</span>
+<span class="k">class</span> <span class="nc">BlogAdmin</span><span class="p">(</span><span class="n">admin</span><span class="o">.</span><span class="n">ModelAdmin</span><span class="p">):</span>
+    <span class="n">list_display</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;title&#39;</span><span class="p">,</span><span class="s">&#39;author&#39;</span><span class="p">,</span><span class="s">&#39;publish&#39;</span><span class="p">]</span>
+    <span class="n">list_filter</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;author&#39;</span><span class="p">,</span><span class="s">&#39;publish&#39;</span><span class="p">]</span>
+    <span class="c1">#search_fields=[&#39;title&#39;,&#39;body&#39;]#搜索框</span>
+    <span class="n">raw_id_fileds</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;author&#39;</span><span class="p">]</span>
+    <span class="n">date_hierarchy</span><span class="o">=</span><span class="s">&#39;publish&#39;</span>
+    <span class="n">ordering</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;publish&#39;</span><span class="p">,</span><span class="s">&#39;author&#39;</span><span class="p">]</span>
+<span class="c1"># Register your models here.</span>
+<span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">register</span><span class="p">(</span><span class="n">BlogArticles</span><span class="p">,</span><span class="n">BlogAdmin</span><span class="p">)</span>
+</pre></div></p>
+<h5 id="_5">创建超级管理员以便登录并发表网站<a class="headerlink" href="#_5" title="Permanent link"></a></h5>
+<p>命令行下 <code>python manage.py createsuperuser</code> ，并相应创建密码等。
+创建好后，浏览器打开 <a href="http://127.0.0.1:8000/admin/">http://127.0.0.1:8000/admin/</a> ，用刚创建的用户名密码登录即可。</p>
+<p>你能看到有个 BLOGARTICLES 选项，可以增加文章。
+<img alt="" src="D:\火狐软件下载目录\Markdown汇总\MD图片\006.png" /></p>
+<hr />
+<h3 id="_6">第二天<a class="headerlink" href="#_6" title="Permanent link"></a></h3>
+<h4 id="url">视图的编写,模板的应用及URL的匹配<a class="headerlink" href="#url" title="Permanent link"></a></h4>
+<p>类似scrapy的交互式环境，也可以在django交互环境中测试。
+<code>python manage.py shell</code>
+如下是一些示列，对数据库中模型的操作
+<div class="codehilite"><pre><span class="kn">from</span> <span class="nn">blog.models</span> <span class="kn">import</span> <span class="n">BlogArticle</span><span class="c1">#从app的models中导入模型类</span>
+<span class="n">blogs</span><span class="o">=</span><span class="n">BlogArticle</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span><span class="c1">#通过这个获取所有数据</span>
+<span class="c1">#len(blogs)文章数量</span>
+<span class="c1">#blogs[0].title,body,author获取第一篇文章标题等</span>
+</pre></div>
+所以我们可以在代码中类似使用这些，对数据库的数据操作</p>
+<p>先在views.py中编写一个视图函数，把文章能显示在网页上
+<div class="codehilite"><pre><span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">render</span>
+<span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">BlogArticles</span>
+
+<span class="c1"># Create your views here.</span>
+<span class="k">def</span> <span class="nf">blog_title</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="n">blogs</span><span class="o">=</span><span class="n">BlogArticles</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span><span class="s">&quot;blog/titles.html&quot;</span><span class="p">,{</span><span class="s">&quot;blogs&quot;</span><span class="p">:</span><span class="n">blogs</span><span class="p">})</span>
+</pre></div></p>
+<ul>
+<li>
+<p><strong>render(request,templates,参数)</strong></p>
+<ul>
+<li>request必须的，且在第一位</li>
+<li>template指的是模板文件位置</li>
+<li>参数是要向模板中传递的参数，只能通过字典形式</li>
+</ul>
+</li>
+<li>
+<p>模板：数据信息为了美观地展示在网页上，就得通过前端模板才行</p>
+<ul>
+<li>模板文件语法<ul>
+<li>{{变量}}</li>
+<li>{%block name%}{%endblock%},块标签，name是名称</li>
+<li>{%extends  模板name%}，继承自某个模板就对应那个模板的name</li>
+<li>{%for one in series%}{%endfor%}</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>OK，现在我们可以编写模板文件了。</p>
+<hr />
+<p>此处省略</p>
+<hr />
+<p>URL配置<urls.py>
+个人感觉并不难，就是一个url正则匹配的过程。它分为两种，其一是在 <code>mysite</code> 项目的总的 <code>urls.py</code> 中进行管理；其二是在不同应用中创建新的<code>urls.py</code>，通过引入 <code>include</code> 把匹配任务分散，便于管理url。</p>
+<p><div class="codehilite"><pre><span class="c1">#mysite/urls.py中</span>
+<span class="kn">from</span> <span class="nn">django.conf.urls</span> <span class="kn">import</span> <span class="n">url</span><span class="p">,</span><span class="n">include</span><span class="c1">#引入include</span>
+<span class="kn">from</span> <span class="nn">django.contrib</span> <span class="kn">import</span> <span class="n">admin</span>
+<span class="c1">#除去include，其他都是通用的</span>
+<span class="n">urlpatterns</span><span class="o">=</span><span class="p">[</span>
+    <span class="n">url</span><span class="p">(</span><span class="s">r&#39;^admin/&#39;</span><span class="p">,</span><span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">urls</span><span class="p">),</span><span class="c1">#默认</span>
+    <span class="n">url</span><span class="p">(</span><span class="s">r&#39;^blog/&#39;</span><span class="p">,</span><span class="n">include</span><span class="p">(</span><span class="s">&#39;blog.urls&#39;</span><span class="p">,</span><span class="n">namespce</span><span class="o">=</span><span class="s">&#39;blog&#39;</span><span class="p">,</span><span class="n">app_name</span><span class="o">=</span><span class="s">&#39;blog&#39;</span><span class="p">)),</span>
+<span class="p">]</span>
+<span class="c1">#这就是url匹配列表，就这样写的。</span>
+<span class="c1">#正则匹配这块如r&#39;^blog/&#39;，代表以/blog/开始匹配。还有就是$代表以什么结尾</span>
+<span class="c1">#include(app.urls)表示除去blog/，之后的匹配任务分给app中的urls.py，而namespace、app_name貌似就是个标识</span>
+</pre></div>
+而关键是url(匹配项，对应视图对象)，比如
+<div class="codehilite"><pre><span class="kn">from</span> <span class="nn">django.conf.urls</span> <span class="kn">import</span> <span class="n">url</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">views</span><span class="c1">#引入视图函数</span>
+<span class="n">urlpatterns</span><span class="o">=</span><span class="p">[</span>
+    <span class="n">url</span><span class="p">(</span><span class="s">r&#39;^$&#39;</span><span class="p">,</span><span class="n">views</span><span class="o">.</span><span class="n">blog_title</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;blog_title&#39;</span><span class="p">),</span>
+<span class="p">]</span>
+</pre></div>
+对应上面include的应用，如果url匹配到了，就只想views.py中的视图函数（类），name就是个区分标识。</p>
+<h4 id="viewsurlstemplates">总结views、urls、templates<a class="headerlink" href="#viewsurlstemplates" title="Permanent link"></a></h4>
+<p>一旦生成一个 request ，就会有一个 url 匹配过程。
+匹配成功，就通过 urls.py 对应不同的 views，views 一旦接收到了 request 就转向去加载一个模板文件，并传入需要的参数，接着便是 response ，网页就显示出来了。
+匹配不成功，有函数 get_object_or_404(),同样是对应的 response 。</p>
+<p>自我感觉现在就是不会编写模板，o(╥﹏╥)o</p>
+<p><img alt="这张图更清晰体现" src="https://user-gold-cdn.xitu.io/2018/1/30/16145fbf830a5eac?w=575&amp;h=751&amp;f=png&amp;s=113539" title="Optional title" /></p>
+<p><a href="https://blog.csdn.net/l_vip/article/details/79182063">django从请求到响应</a>，他的其他几篇博客也可学习。</p>
+<h3 id="513sublime">5.13sublime记录<a class="headerlink" href="#513sublime" title="Permanent link"></a></h3>
+<p>今天为了可以交互环境运行py3，对sublimePERL的config进行了修改。</p>
+<blockquote>
+<p>进入方式：首选项-&gt;浏览插件目录-&gt;选择sublimePERL下的config-&gt;创建文件夹Python3，并将原有Python下文件复制到了Python3下-&gt;修改Main.sublime-menu下其中所有&rdquo;cmd&rdquo;:所在的那一行的&rdquo;python&rdquo;改为&rdquo;py&rdquo;,&rdquo;-3&rdquo;,-&gt;其次，Default.sublime-commands下所有&rdquo;file&rdquo;，&rdquo;caption&rdquo;路径的Python改为&rdquo;Python3&rdquo;。
+</p>
+</blockquote>
+<p>但&rdquo;工具-&gt;subimePERL&rdquo;下没有Python3选项。
+等待明天看看是否有。。。</p>
+<p>其次&rdquo;首选项-&gt;快捷键设置&rdquo;
+<div class="codehilite"><pre><span class="p">[</span>
+    <span class="p">{</span><span class="s">&quot;keys&quot;</span><span class="p">:[</span><span class="s">&quot;f5&quot;</span><span class="p">],</span>
+<span class="s">&quot;caption&quot;</span><span class="p">:</span> <span class="s">&quot;SublimeREPL: Python - RUN current file&quot;</span><span class="p">,</span>
+<span class="s">&quot;command&quot;</span><span class="p">:</span> <span class="s">&quot;run_existing_window_command&quot;</span><span class="p">,</span> <span class="s">&quot;args&quot;</span><span class="p">:</span>
+<span class="p">{</span>
+<span class="s">&quot;id&quot;</span><span class="p">:</span> <span class="s">&quot;repl_python_run&quot;</span><span class="p">,</span>
+<span class="s">&quot;file&quot;</span><span class="p">:</span> <span class="s">&quot;config/Python/Main.sublime-menu&quot;</span>
+<span class="p">}}</span>
+<span class="p">]</span>
+<span class="c1">#&quot;caption&quot;: &quot;SublimeREPL: Python - RUN current file&quot;,</span>
+<span class="c1">#这一步关键，工具-&gt;sublimePERL-&gt;Python-&gt;RUN current file</span>
+</pre></div>
+<a href="https://www.zhihu.com/question/42102873">https://www.zhihu.com/question/42102873</a></p>
+<h3 id="_7">第三天<a class="headerlink" href="#_7" title="Permanent link"></a></h3>
+<h4 id="_8">内容补充<a class="headerlink" href="#_8" title="Permanent link"></a></h4>
+<p>前面讲到了如何直接对数据库的操作
+<div class="codehilite"><pre><span class="c1"># 命令行 python manage.py shell</span>
+<span class="kn">from</span> <span class="nn">blog.models</span> <span class="kn">import</span> <span class="n">BlogArtiles</span>
+<span class="n">blogs</span><span class="o">=</span><span class="n">BlogArticles</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">all</span><span class="p">()</span> <span class="c1">#获取数据库中所有数据项</span>
+</pre></div>
+它的类型 <code>django.db.models.query.QuerySet</code>，你可以通过for 循环，对其每一项数据进行操作，如：
+<div class="codehilite"><pre><span class="k">for</span> <span class="n">blog</span> <span class="ow">in</span> <span class="n">blogs</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">blog</span><span class="o">.</span><span class="n">title</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">blog</span><span class="o">.</span><span class="n">body</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">blog</span><span class="o">.</span><span class="n">author</span><span class="o">.</span><span class="n">username</span><span class="p">)</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">blog</span><span class="o">.</span><span class="n">publish</span><span class="p">)</span>
+</pre></div>
+没错，打印的都是 BlogArticles 中定义的字段。</p>
+<p>然后我又看到了一种写法
+<div class="codehilite"><pre><span class="n">blog</span><span class="o">=</span><span class="n">BlogArticles</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="c1">#这个id就是文章编号，就好比上面的 for 循环，第一遍对应 id=1</span>
+<span class="c1">#同理对应字段对应格式</span>
+<span class="n">blog</span><span class="o">.</span><span class="n">title</span>
+<span class="n">blog</span><span class="o">.</span><span class="n">body</span>
+<span class="err">。。。</span>
+</pre></div>
+然后在上面我们定义的 titles.html 中，就能通过这样实现点击相应的标题跳转到对应的文章了。
+你应该会想到万一 id 超过文章数量怎么办吧？加一个404页面就好了。而 django 中正好有<code>get_object_or_404()</code>方法。用法如下：</p>
+<div class="codehilite"><pre><span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">get_object_or_404</span><span class="p">,</span><span class="n">render</span><span class="c1">#没错，这家伙和render是一伙的</span>
+<span class="n">blog</span><span class="o">=</span><span class="n">get_object_or_404</span><span class="p">(</span><span class="n">BlogArticles</span><span class="p">,</span><span class="nb">id</span><span class="p">)</span>
+</pre></div>
+
+<p>OK，再次编写一个视图函数对应blog的跳转。
+<div class="codehilite"><pre><span class="k">def</span> <span class="nf">article</span><span class="p">(</span><span class="n">request</span><span class="p">,</span><span class="n">a_id</span><span class="p">):</span><span class="c1">#多一个参数，url该如何配置？</span>
+    <span class="n">blog</span><span class="o">=</span><span class="n">get_object_or_404</span><span class="p">(</span><span class="n">BlogArticles</span><span class="p">,</span><span class="nb">id</span><span class="o">=</span><span class="n">a_id</span><span class="p">)</span>
+    <span class="n">publish_time</span><span class="o">=</span><span class="n">blog</span><span class="o">.</span><span class="n">publish_time</span><span class="c1">#嗯，作者就是这样写的，虽然可以直接传一个参数过去.</span>
+    <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span><span class="s">&quot;blog/article.html&quot;</span><span class="p">,{</span><span class="s">&#39;blog&#39;</span><span class="p">:</span><span class="n">blog</span><span class="p">,</span><span class="s">&#39;publis&#39;</span><span class="p">:</span><span class="n">publish_time</span><span class="p">})</span>
+</pre></div></p>
+<p>按上次的思路，接下来便是 url 匹配，template 编写。我前端不行，这块代码直接在文末贴出来吧，以后都如此。</p>
+<p>像我上面代码中注释的，该如何匹配？首先明确，希望 url 类似 <code>./blog/1/</code>。
+直接说吧，(?P<name>匹配形式)这里的 name 对应着视图函数中参数名，如(?P<a_id>\d&gt;) 用来匹配参数 id， a_id 在 <code>def article(request,a_id)</code> 这。
+所以如下添加 url 路径
+<div class="codehilite"><pre><span class="n">urlpatterns</span><span class="o">=</span><span class="p">[</span>
+    <span class="n">url</span><span class="p">(</span><span class="s">r&#39;^$&#39;</span><span class="p">,</span><span class="n">views</span><span class="o">.</span><span class="n">blog_title</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;blog_title&#39;</span><span class="p">),</span>
+    <span class="n">url</span><span class="p">(</span><span class="s">r&#39;(?P&lt;a_id&gt;\d+)/$&#39;</span><span class="p">,</span><span class="n">views</span><span class="o">.</span><span class="n">article</span><span class="p">,</span><span class="n">name</span><span class="o">=</span><span class="s">&#39;blog_detail&#39;</span><span class="p">)</span>
+<span class="p">]</span>
+</pre></div></p>
+<blockquote>
+<p>注意，传进的参数都是字符串，都是字符串。
+（？P<name>regx）:正则会匹配到括号括起的内容（regx要匹配的）作为参数传给视图函数，而 name 则指明是哪个参数。
+</p>
+</blockquote>
+<h4 id="response">返回 Response 写法<a class="headerlink" href="#response" title="Permanent link"></a></h4>
+<ul>
+<li>最原始的导入 <code>HttpResponse</code> 和 <code>Http404</code>，类似：</li>
+</ul>
+<p><div class="codehilite"><pre><span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span><span class="p">,</span><span class="n">Http404</span>
+<span class="kn">from</span> <span class="nn">django.template</span> <span class="kn">import</span> <span class="n">loder</span><span class="c1">#用于数据项加载 template</span>
+<span class="kn">from</span> <span class="nn">.models</span> <span class="kn">import</span> <span class="n">BlogArticles</span>
+<span class="k">def</span> <span class="nf">Func</span><span class="p">(</span><span class="n">request</span><span class="p">,</span><span class="nb">id</span><span class="p">):</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">blog</span><span class="o">=</span><span class="n">BlogArticles</span><span class="o">.</span><span class="n">objects</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="nb">id</span><span class="p">)</span>
+    <span class="k">except</span> <span class="n">BlogArticles</span><span class="o">.</span><span class="n">DoesNotExist</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">Http404</span><span class="p">(</span><span class="s">&quot;文章不存在。。。&quot;</span><span class="p">)</span>
+    <span class="n">template</span><span class="o">=</span><span class="n">loder</span><span class="o">.</span><span class="n">get_template</span><span class="p">(</span><span class="err">模板文件</span><span class="p">)</span>
+    <span class="n">data</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;blog&#39;</span><span class="p">:</span><span class="n">blog</span><span class="p">,</span><span class="s">&#39;publish&#39;</span><span class="p">:</span><span class="n">blog</span><span class="o">.</span><span class="n">publish_time</span><span class="p">}</span>
+    <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="n">template</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">data</span><span class="p">,</span><span class="n">request</span><span class="p">))</span>
+</pre></div>
+- 整个一个加载模板并传递参数的流程，挺繁琐的。那就用简单点的吧，像前几次文章中的，引入<code>render</code> 和 <code>get_object_or_404</code> ，我就不写了，你往前翻翻吧。</p>
+<h3 id="_9">总结<a class="headerlink" href="#_9" title="Permanent link"></a></h3>
+<h4 id="url_1">对于 URL 设计思考<a class="headerlink" href="#url_1" title="Permanent link"></a></h4>
+<ul>
+<li>建议分多级路由进行 url 匹配，也便于管理<ul>
+<li>include()的使用<blockquote>
+<p>明确URLConf机制先从项目根 urls 即 mysite.urls 开始匹配urlpatterns
+url(regx,include(&lsquo;app.urls&rsquo;,namespace,app_name))
+include还有一种用法，比如 /blog/python/,/blog/c++/,/blog/java/等类似前缀相同的情况下，可以定义一个 mypatterns，如下。</p>
+<div class="codehilite"><pre><span class="n">mypatterns</span><span class="o">=</span><span class="p">[</span>
+    <span class="n">url</span><span class="p">(</span><span class="s">r&#39;^python/&#39;</span><span class="p">,</span><span class="err">视图</span><span class="p">),</span>
+    <span class="n">url</span><span class="p">(</span><span class="s">r&#39;^python/&#39;</span><span class="p">,</span><span class="err">视图</span><span class="p">),</span>
+    <span class="o">...</span>
+<span class="p">]</span>
+<span class="n">urlpatterns</span><span class="o">=</span><span class="p">[</span>
+    <span class="n">url</span><span class="p">(</span><span class="s">r&#39;^blog/&#39;</span><span class="p">,</span><span class="n">include</span><span class="p">(</span><span class="n">mypatterns</span><span class="p">))</span>
+<span class="p">]</span>
+</pre></div>
+
+</blockquote>
+</li>
+</ul>
+</li>
+<li>url 中含有需要传入参数的情况<ul>
+<li><code>（？P&lt;name&gt; regxpattern）</code> 的使用（可以有多个）。</li>
+<li>从上一级 URLconf 匹配到的参数依旧会传到下一级（就是最终函数都能收到）。</li>
+</ul>
+</li>
+<li>视图中需要的参数不在url中时<ul>
+<li>通过<code>url(regx,view,data)</code>，额外的参数data允许以字典形式传入</li>
+<li>如上形式也能传递给 <code>include()</code>，但会传给include包含的每一个 urlconf的视图函数。<strong>如果某个视图不需要改参数，反而会报错</strong>。</li>
+<li>避免data中参数名与url中匹配的参数名重名冲突。</li>
+</ul>
+</li>
+</ul>
+<h4 id="url_2">URL反解<a class="headerlink" href="#url_2" title="Permanent link"></a></h4>
+<blockquote>
+<p>为了解决这个问题，Django提供了一种解决方案，只需在URL中提供一个name参数，并赋值一个你自定义的、好记的、直观的字符串。
+通过这个name参数，可以反向解析URL、反向URL匹配、反向URL查询或者简单的URL反查。
+在需要解析URL的地方，对于不同层级，Django提供了不同的工具用于URL反查：</p>
+<p>在模板语言中：使用 url 模板标签。(也就是写前端网页时）</p>
+<p>在Python代码中：使用 reverse() 函数。（也就是写视图函数等情况时）</p>
+<p>在更高层的与处理Django模型实例相关的代码中：使用 get_absolute_url() 方法。(也就是在模型model中)</p>
+<p>出自 <a href="http://www.liujiangblog.com/course/django/136">http://www.liujiangblog.com/course/django/136</a>
+</p>
+</blockquote>
+<p>先说模板标签的吧，按我的理解分两种：</p>
+<ul>
+<li>
+<p>定义了别名 name，如{%url &lsquo;别名&rsquo; 参数%}
+<code>&lt;a href="{% url 'blog_detail' 2%}"&gt;</code> 对应 <code>url(r'(?P&lt;a_id&gt;\d+)/$',views.article,name='blog_detail')</code></p>
+</li>
+<li>
+<p>定义了命名空间 namespace 和别名 name，{%url &lsquo;namespace:name&rsquo; 参数%}。为了区别同 name 而不同 namespace的匹配，namespace 可换成 app_name。
+<div class="codehilite"><pre><span class="c1">#可以在urls.py中定义</span>
+<span class="n">app_name</span><span class="o">=</span><span class="n">blog</span>
+<span class="c1">#模板中</span>
+<span class="p">{</span><span class="o">%</span><span class="k">for</span> <span class="n">blog</span> <span class="ow">in</span> <span class="n">blogs</span><span class="o">%</span><span class="p">}</span>
+                <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">target</span><span class="o">=</span><span class="s">&quot;_blank&quot;</span> <span class="n">href</span><span class="o">=</span><span class="s">&quot;{</span><span class="si">%u</span><span class="s">rl &#39;blog:blog_detail&#39; blog.id%}&quot;</span><span class="o">&gt;</span><span class="p">{{</span><span class="n">blog</span><span class="o">.</span><span class="n">title</span><span class="p">}}</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+            <span class="p">{</span><span class="o">%</span><span class="n">endfor</span><span class="o">%</span><span class="p">}</span>
+<span class="c1">#仍旧对应 url(r&#39;(?P&lt;a_id&gt;\d+)/$&#39;,views.article,name=&#39;blog_detail&#39;)</span>
+</pre></div>
+<strong>注意：模板文件里没什么py语法了，都是字符串。 blog.id 可以直接写在字符串里。</strong></p>
+</li>
+</ul>
+<p>而 reverse()用法如下
+<div class="codehilite"><pre><span class="c1">####urls</span>
+<span class="kn">from</span> <span class="nn">django.conf.urls</span> <span class="kn">import</span> <span class="n">url</span><span class="p">,</span><span class="n">include</span>
+<span class="kn">from</span> <span class="nn">app1</span> <span class="kn">import</span> <span class="n">views</span>
+<span class="n">urlpatterns</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">url</span><span class="p">(</span><span class="s">r&#39;^art/&#39;</span><span class="p">,</span> <span class="n">views</span><span class="o">.</span><span class="n">art3</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s">&#39;blog&#39;</span><span class="p">),</span>
+<span class="p">]</span>
+<span class="c1">####views</span>
+<span class="k">def</span> <span class="nf">art3</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="k">print</span><span class="p">(</span><span class="n">reverse</span><span class="p">(</span><span class="s">&#39;blog&#39;</span><span class="p">))</span>    <span class="c1">#在视图函数中对url进行反向解析</span>
+    <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s">&quot;OK&quot;</span><span class="p">)</span>
+</pre></div></p>
+<h3 id="_10">第四天<a class="headerlink" href="#_10" title="Permanent link"></a></h3>
+<h4 id="templates">Templates管理<a class="headerlink" href="#templates" title="Permanent link"></a></h4>
+<ul>
+<li>自定义模板位置（在根目录下统一放置模板文件，集中管理）<ul>
+<li>根目录下新建 templates文件夹，并把原有 <code>./blog/templates/</code> 下文件拷贝进来</li>
+<li>修改 settings.py 中 TEMPLATES 选项
+<div class="codehilite"><pre>&#39;DIRS&#39;: [],
+&#39;APP_DIRS&#39;: True,
+#改为
+&#39;DIRS&#39;: [os.path.join(BASE_DIR,&#39;templates&#39;),],#指明在 ./templates 下寻找
+&#39;APP_DIRS&#39;: False, #不允许默认寻找模板位置的方式
+</pre></div></li>
+</ul>
+</li>
+</ul>
+<h4 id="_11">重置后台管理模板<a class="headerlink" href="#_11" title="Permanent link"></a></h4>
+<p>你试一试自定义模板路径后，能否重新登录、管理后台。不能吧？
+有如下报错：
+<div class="codehilite"><pre>TemplateDoesNotExist at /admin/
+admin/index.html
+Request Method: GET
+Request URL:    http://127.0.0.1:8000/admin/
+Django Version: 1.11
+Exception Type: TemplateDoesNotExist
+Exception Value:    
+admin/index.html
+Exception Location: C:\Python36\lib\site-packages\django\template\loader.py in 
+...
+</pre></div>
+大致意思就是找不到默认的后台管理的模板了，因为我们修改了模板路径。把它默认的模板copy到templates下就好了。</p>
+<blockquote>
+<p>默认在<code>Python36\Lib\site-packages\django\contrib\admin\templates</code>下，admin和registration两个。
+</p>
+</blockquote>
+<h4 id="_12">静态文件的使用<a class="headerlink" href="#_12" title="Permanent link"></a></h4>
+<ul>
+<li>使用 bootstrap<ul>
+<li><a href="https://getbootstrap.com/docs/4.0/getting-started/download/#compiled-css-and-js">从这里下载</a></li>
+</ul>
+</li>
+<li>自定义静态文件（css，js，image）位置<ul>
+<li>根目录下新建 static 文件夹</li>
+<li>修改 settings.py 中 static 配置</li>
+<li>static 下再新建 css、js、images文件夹（应用多时可以分不同应用新建不同的静态文件夹）</li>
+<li>把先前下载的文件解压到对应文件下
+<div class="codehilite"><pre># Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.11/howto/static-files/
+
+STATIC_URL = &#39;/static/&#39;#默认时每个app下的static中寻找
+#增加
+STATICFILES_DIRS=[os.path.join(BASE_DIR，&#39;static&#39;),]#改为在根目录下static中寻找
+</pre></div></li>
+</ul>
+</li>
+</ul>
+<p>没错，这就类似 templates 目录的配置。指明静态文件从根目录下的 static 文件夹开始找。</p>
+<ul>
+<li>静态文件如何在模板中应用？</li>
+</ul>
+<p>在模板中该如何写呢？通过模板标签<code>{%static %}</code>，如 <code>{%static 'css/bootstrap.min.css'%}</code>，这相当于 <code>http://127.0.0.1:8000/static/css/bootstrap.min.css</code>
+这里我们把博客分成大致三个部分：首，文体，尾。分别对应 header.html,base.html,footer.html.</p>
+<hr />
+<h5 id="basehtml">修改原有base.html<a class="headerlink" href="#basehtml" title="Permanent link"></a></h5>
+<div class="codehilite"><pre><span class="p">{</span><span class="o">%</span> <span class="n">load</span> <span class="n">staticfiles</span> <span class="o">%</span><span class="p">}</span>
+<span class="o">&lt;</span><span class="err">!</span><span class="n">DOCTYPE</span> <span class="n">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">html</span> <span class="n">lang</span><span class="o">=</span><span class="s">&quot;zh-cn&quot;</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">head</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">meta</span> <span class="n">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">meta</span> <span class="n">name</span><span class="o">=</span><span class="s">&quot;viewpoint&quot;</span> <span class="n">content</span><span class="o">=</span><span class="s">&quot;width=device-width,initial-scale=1&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">title</span><span class="o">&gt;</span><span class="p">{</span><span class="o">%</span><span class="n">block</span> <span class="n">title</span><span class="o">%</span><span class="p">}{</span><span class="o">%</span><span class="n">endblock</span><span class="o">%</span><span class="p">}</span><span class="o">&lt;/</span><span class="n">title</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">link</span> <span class="n">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="nb">type</span><span class="o">=</span><span class="s">&quot;text/css&quot;</span> <span class="n">href</span><span class="o">=</span><span class="s">&quot;{</span><span class="si">% s</span><span class="s">tatic &#39;css/bootstrap.css&#39; %}&quot;</span><span class="o">&gt;</span>
+
+<span class="o">&lt;/</span><span class="n">head</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
+    <span class="p">{</span><span class="o">%</span><span class="n">include</span> <span class="s">&#39;header.html&#39;</span><span class="o">%</span><span class="p">}</span>
+    <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="o">&gt;</span>
+        <span class="p">{</span><span class="o">%</span><span class="n">block</span> <span class="n">content</span><span class="o">%</span><span class="p">}{</span><span class="o">%</span><span class="n">endblock</span><span class="o">%</span><span class="p">}</span>
+    <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+    <span class="p">{</span><span class="o">%</span><span class="n">include</span> <span class="s">&#39;footer.html&#39;</span><span class="o">%</span><span class="p">}</span>
+    <span class="p">{</span><span class="o">%</span><span class="n">block</span> <span class="n">javascript</span><span class="o">%</span><span class="p">}{</span><span class="o">%</span><span class="n">endblock</span><span class="o">%</span><span class="p">}</span>
+<span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">html</span><span class="o">&gt;</span>
+</pre></div>
+
+<h5 id="headhtml-footerhtml">添加head.html footer.html<a class="headerlink" href="#headhtml-footerhtml" title="Permanent link"></a></h5>
+<div class="codehilite"><pre><span class="c1">#head.html</span>
+<span class="p">{</span><span class="o">%</span> <span class="n">load</span> <span class="n">staticfiles</span> <span class="o">%</span><span class="p">}</span>
+<span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">nav</span> <span class="n">class</span><span class="o">=</span><span class="s">&quot;navbar navbar-default&quot;</span> <span class="n">role</span><span class="o">=</span><span class="s">&quot;navigation&quot;</span> <span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s">&quot;navbar-header&quot;</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">&quot;http://blog.csdn.net/lzw2016&quot;</span> <span class="n">class</span><span class="o">=</span><span class="s">&quot;navbar-brand&quot;</span><span class="o">&gt;&lt;</span><span class="n">img</span> <span class="n">src</span><span class="o">=</span><span class="s">&quot;{</span><span class="si">%s</span><span class="s">tatic &#39;images/logo.png&#39; %}&quot;</span> <span class="n">width</span><span class="o">=</span><span class="s">&quot;100px&quot;</span><span class="o">&gt;&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>  
+        <span class="o">&lt;</span><span class="n">div</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">ul</span> <span class="n">class</span><span class="o">=</span><span class="s">&quot;nav navbar-nav&quot;</span> <span class="n">role</span><span class="o">=</span><span class="s">&quot;navigation&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">&quot;{</span><span class="si">%u</span><span class="s">rl &#39;blog:blog_title&#39;%}&quot;</span><span class="o">&gt;</span><span class="err">博客</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+            <span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">ul</span> <span class="n">class</span><span class="o">=</span><span class="s">&quot;nav navbar-nav navbar-right&quot;</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">&quot;#&quot;</span><span class="o">&gt;</span><span class="err">登录</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+            <span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">nav</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+
+<span class="c1">#footer.html</span>
+<span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s">&quot;container&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">hr</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">p</span> <span class="n">class</span><span class="o">=</span><span class="s">&quot;text-center&quot;</span><span class="o">&gt;</span><span class="n">JosonLee</span><span class="s">&#39;s blog &lt;a href=&quot;http://blog.csdn.net/lzw2016&quot;&gt;点这里&lt;/a&gt;&lt;/p&gt;</span>
+<span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+</pre></div>
+
+<hr />
+<p>你能看到 模板中出现了 <code>{% load staticfiles %}</code> ,<code>{% static 'css/bootstrap.css' %}</code> 。后者前面已经解释过了，而前者就是为了申明引入静态文件(必须的)，指明静态文件位置从何找起，避免了硬编码（每次引用都必须指明明确位置）。</p>
+<p>其次是<code>{%include "header.html"%}</code>，指明这里包含header.html这个模板文件。</p>
+<h4 id="_13">总结<a class="headerlink" href="#_13" title="Permanent link"></a></h4>
+<p>大致以下几点
+- templates路径设置
+- static路径设置
+- static模板标签使用
+    + {%load staticfiles%}
+    + {%sttic &ldquo;某个静态文件位置(如css/bootstrap.min.css)&rdquo;%}&mdash;&gt;域名/static/css/bootstrap.min.css</p>
+<hr />
+<hr />
+<h3 id="_14">第五天<a class="headerlink" href="#_14" title="Permanent link"></a></h3>
+<h4 id="_15">用户登录管理<a class="headerlink" href="#_15" title="Permanent link"></a></h4>
+<ul>
+<li>注册应用account</li>
+<li>settings设置</li>
+<li>url设置</li>
+</ul>
+<h4 id="tips">Tips<a class="headerlink" href="#tips" title="Permanent link"></a></h4>
+<blockquote>
+<p>from . import views (这个<strong>.</strong>代表什么？？？)
+这个<strong>.</strong>指的是当前程序所在文件夹中的 <strong>init</strong>.py 
+也类似 Linux下的 <strong>.</strong> 表示当前目录，<strong>..</strong> 表示上一级目录，以此类推
+<strong>前提是一定要有 <strong>init</strong>.py ，否则不能用</strong></p>
+</blockquote>
+<p>account下新建forms.py，用以存放用户登录表单的各种类</p>
+<div class="codehilite"><pre><span class="kn">from</span> <span class="nn">django</span> <span class="kn">import</span> <span class="n">forms</span>
+
+<span class="k">class</span> <span class="nc">LoginForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">Form</span><span class="p">):</span>
+    <span class="n">username</span><span class="o">=</span><span class="n">forms</span><span class="o">.</span><span class="n">CharField</span><span class="p">()</span>
+    <span class="n">password</span><span class="o">=</span><span class="n">forms</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">widget</span><span class="o">=</span><span class="n">forms</span><span class="o">.</span><span class="n">PasswordInput</span><span class="p">)</span>
+</pre></div>
+
+<p>login=LoginForm() 创建未绑定的对象</p>
+<p>dir(login)查看可用方法
+主要关注以下几种方法、属性</p>
+<ul>
+<li>cleaned_data：以字典形式返回你注册的用户和密码</li>
+<li>is_bound：判断用户是否绑定</li>
+<li>is_vaild()：判断输入的用户和密码是否符合格式要求</li>
+</ul>
+<div class="codehilite"><pre><span class="c1">#Django交互模式下</span>
+<span class="n">lf</span><span class="o">=</span><span class="n">LoginForm</span><span class="p">({</span><span class="s">&#39;username&#39;</span><span class="p">:</span><span class="s">&#39;lzw&#39;</span><span class="p">,</span><span class="s">&#39;password&#39;</span><span class="p">:</span><span class="mi">123</span><span class="p">})</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">24</span><span class="p">]:</span> <span class="n">lf</span><span class="o">.</span><span class="n">data</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">24</span><span class="p">]:</span> <span class="p">{</span><span class="s">&#39;username&#39;</span><span class="p">:</span> <span class="s">&#39;lzw&#39;</span><span class="p">,</span> <span class="s">&#39;password&#39;</span><span class="p">:</span> <span class="mi">123</span><span class="p">}</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">25</span><span class="p">]:</span> <span class="n">lf</span><span class="o">.</span><span class="n">is_bound</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">25</span><span class="p">]:</span> <span class="bp">True</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">26</span><span class="p">]:</span> <span class="n">lf</span><span class="o">.</span><span class="n">is_valid</span><span class="p">()</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">26</span><span class="p">]:</span> <span class="bp">True</span>
+
+<span class="n">In</span> <span class="p">[</span><span class="mi">27</span><span class="p">]:</span> <span class="n">lf</span><span class="o">.</span><span class="n">cleaned_data</span>
+<span class="n">Out</span><span class="p">[</span><span class="mi">27</span><span class="p">]:</span> <span class="p">{</span><span class="s">&#39;username&#39;</span><span class="p">:</span> <span class="s">&#39;lzw&#39;</span><span class="p">,</span> <span class="s">&#39;password&#39;</span><span class="p">:</span> <span class="s">&#39;123&#39;</span><span class="p">}</span>
+</pre></div>
+
+<ul>
+<li>编写用户登录的视图函数
+修改 account 应用下的 views.py
+<div class="codehilite"><pre><span class="kn">from</span> <span class="nn">django.shortcuts</span> <span class="kn">import</span> <span class="n">render</span>
+<span class="kn">from</span> <span class="nn">django.http</span> <span class="kn">import</span> <span class="n">HttpResponse</span>
+<span class="kn">from</span> <span class="nn">django.contrib.auth</span> <span class="kn">import</span> <span class="n">authenticate</span><span class="p">,</span><span class="n">login</span>
+<span class="kn">from</span> <span class="nn">.forms</span> <span class="kn">import</span> <span class="n">LoginForm</span>
+
+<span class="c1"># Create your views here.</span>
+
+<span class="k">def</span> <span class="nf">user_login</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span><span class="o">==</span><span class="s">&#39;POST&#39;</span><span class="p">:</span>
+        <span class="n">login_form</span><span class="o">=</span><span class="n">LoginForm</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">login_form</span><span class="o">.</span><span class="n">is_valid</span><span class="p">():</span><span class="c1">#判断表单数据是否符合要求（比如不能为空之类的）</span>
+            <span class="n">cd</span><span class="o">=</span><span class="n">login_form</span><span class="o">.</span><span class="n">cleaned_data</span>
+            <span class="n">user</span><span class="o">=</span><span class="n">authenticate</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="n">cd</span><span class="p">[</span><span class="s">&#39;username&#39;</span><span class="p">],</span><span class="n">password</span><span class="o">=</span><span class="n">cd</span><span class="p">[</span><span class="s">&#39;password&#39;</span><span class="p">])</span>
+
+            <span class="k">if</span> <span class="n">user</span><span class="p">:</span>
+                <span class="n">login</span><span class="p">(</span><span class="n">request</span><span class="p">,</span><span class="n">user</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s">&#39;Welcome Boys and Girls，you have logined successfully...&#39;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s">&#39;sorry,your input is error...&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span><span class="o">==</span><span class="s">&#39;GET&#39;</span><span class="p">:</span>
+        <span class="n">login_form</span><span class="o">=</span><span class="n">LoginForm</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span><span class="s">&#39;account/login.html&#39;</span><span class="p">,{</span><span class="s">&#39;form&#39;</span><span class="p">:</span><span class="n">login_form</span><span class="p">})</span>
+</pre></div></li>
+</ul>
+<h4 id="_16">用户登录流程总结<a class="headerlink" href="#_16" title="Permanent link"></a></h4>
+<p>看上面的代码，大体能看出一点思路吧。</p>
+<ol>
+<li>首先，Django 通过 urlconf 匹配到了登录请求，此时前端提交了一个 Get方式请求 Request，然后指向 user_login 函数</li>
+<li>此时，因为是 Get 方式（request的method属性是Http请求的类型，字符串），所以指向 login.html（Response），又回到了前端</li>
+<li>你先不必在意login.html，只要知道它在用户填写用户名、密码并点击登录按钮后，以Post方式发送了请求（Request）</li>
+<li>再次指向了 user_login 函数，此时django 自带了一套登录处理的方法 <code>from django.contrib.auth import authenticate,login</code>，前者检验用户是否在网站注册过、输入用户名、密码是否正确，后者搭配使用，若验证通过就把用户ID保留在 session 中</li>
+<li>完成后续 Response操作</li>
+</ol>
+<ul>
+<li>配置登录的URL路由
+在主 urls.py 下增添一个导向account 下 urls.py 的路由匹配
+<div class="codehilite"><pre><span class="n">url</span><span class="p">(</span><span class="s">r&#39;^account/&#39;</span><span class="p">,</span><span class="n">include</span><span class="p">(</span><span class="n">account</span><span class="o">.</span><span class="n">urls</span><span class="p">,</span><span class="n">namespace</span><span class="o">=</span><span class="s">&#39;account&#39;</span><span class="p">,</span><span class="n">appname</span><span class="o">=</span><span class="s">&#39;account&#39;</span><span class="p">))</span>
+</pre></div></li>
+</ul>
+<p>account/urls.py
+<div class="codehilite"><pre>from django.conf.urls import url
+from django.contrib import admin
+from . import views
+
+urlpatterns=[
+    url(r&#39;^login/$&#39;,views.user_login,name=&#39;user_login&#39;)
+]
+</pre></div></p>
+<ul>
+<li>增加登录界面
+templates/account/login.html
+<div class="codehilite"><pre><span class="p">{</span><span class="o">%</span><span class="n">extends</span> <span class="s">&#39;base.html&#39;</span><span class="o">%</span><span class="p">}</span>
+<span class="p">{</span><span class="o">%</span><span class="n">block</span> <span class="n">title</span><span class="o">%</span><span class="p">}</span><span class="err">登录</span><span class="p">{</span><span class="o">%</span><span class="n">endblock</span><span class="o">%</span><span class="p">}</span>
+
+<span class="p">{</span><span class="o">%</span><span class="n">block</span> <span class="n">content</span><span class="o">%</span><span class="p">}</span>
+<span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s">&quot;row text-center vertical-middle-sm&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">Login</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="nb">input</span> <span class="n">your</span> <span class="n">username</span> <span class="ow">and</span> <span class="n">password</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">form</span> <span class="n">action</span><span class="o">=</span><span class="s">&quot;.&quot;</span> <span class="n">class</span><span class="o">=</span><span class="s">&quot;form-horizontal&quot;</span> <span class="n">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span><span class="o">&gt;</span>
+        <span class="p">{</span><span class="o">%</span><span class="n">csrf_token</span><span class="o">%</span><span class="p">}</span>
+        <span class="p">{{</span><span class="n">form</span><span class="o">.</span><span class="n">as_p</span><span class="p">}}</span>
+        <span class="o">&lt;</span><span class="nb">input</span> <span class="nb">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="n">value</span><span class="o">=</span><span class="s">&quot;Login&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">form</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+<span class="p">{</span><span class="o">%</span><span class="n">endblock</span><span class="o">%</span><span class="p">}</span>
+</pre></div></li>
+</ul>
+<p><code>{%csrf_token%}</code> 这个必须有，只要在 form 标签内就 OK。保证了前端可以通过 POST 方式提交数据。
+<code>{{form.as_p}}</code> 实例对象的 as_p方法，使得表单数据呈现为一系列p标签，类似有 as_ul、as_table。</p>
+<ul>
+<li>结果展示
+我在admin后台管理新创建了一个名lzw的用户
+<img alt="Alt text" src="D:\火狐软件下载目录\Markdown汇总\MD图片\login1.jpg" title="Login" />
+你可以如箭头所示，修改前端head.html的登录所指向的链接，也达到如此效果
+<img alt="Alt text" src="D:\火狐软件下载目录\Markdown汇总\MD图片\login2.png" title="Login" /></li>
+</ul>
+<h3 id="_17">第六天<a class="headerlink" href="#_17" title="Permanent link"></a></h3>
+<h4 id="tips_1">今日Tips<a class="headerlink" href="#tips_1" title="Permanent link"></a></h4>
+<blockquote>
+<p><a target="_blank" href="///G://blog_detail%27%20blog.id%25%7D">
+<a target="_blank" href="/blog/{{blog.id}}">
+两种写法都可</p>
+<p>render_to_response()可以简化render()，不需要request参数
+model.objects.get()和model.objects.filter()，后者返回是满足搜索条件的对象列表</p>
+<p>？？？ 含有外键ForeignField时，搜索该如何写？？？
+如：author=models.ForeignKey(User,related_name=&rdquo;blog_posts&rdquo;)
+objects.get(author__???=&rsquo;JosonLee&rsquo;)双下划綫</p>
+</blockquote>
+<h4 id="_18">用户注册管理<a class="headerlink" href="#_18" title="Permanent link"></a></h4>
+<p>总不能别人访问网站都得你一个个手动输入、注册用户吧。Django也同样提供了一套对应的处理方法。</p>
+<ul>
+<li>先编写注册表单类</li>
+</ul>
+<p>类似登录的表单类，继承于 forms.ModelForm(不同于Form，该类型表单会对数据库修改并写入数据库)</p>
+<p><div class="codehilite"><pre><span class="kn">from</span> <span class="nn">django</span> <span class="kn">import</span>  <span class="n">forms</span>
+<span class="kn">from</span> <span class="nn">django.contrib.auth.models</span> <span class="kn">import</span> <span class="n">User</span>
+<span class="c1">#注册表单</span>
+<span class="k">class</span> <span class="nc">RegistrationForm</span><span class="p">(</span><span class="n">forms</span><span class="o">.</span><span class="n">ModelForm</span><span class="p">):</span>
+    <span class="n">password</span><span class="o">=</span><span class="n">forms</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s">&#39;Password&#39;</span><span class="p">,</span><span class="n">widget</span><span class="o">=</span><span class="n">forms</span><span class="o">.</span><span class="n">PasswordInput</span><span class="p">)</span>
+    <span class="n">password1</span><span class="o">=</span><span class="n">forms</span><span class="o">.</span><span class="n">CharField</span><span class="p">(</span><span class="n">label</span><span class="o">=</span><span class="s">&#39;Confirm Password&#39;</span><span class="p">,</span><span class="n">widget</span><span class="o">=</span><span class="n">forms</span><span class="o">.</span><span class="n">PasswordInput</span><span class="p">)</span>
+    <span class="c1">#用以检验前后输入密码是否相同</span>
+    <span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+        <span class="n">model</span><span class="o">=</span><span class="n">User</span><span class="c1">#指明表单内容写入User这个表中</span>
+        <span class="n">fields</span><span class="o">=</span><span class="p">(</span><span class="s">&quot;username&quot;</span><span class="p">,</span><span class="s">&quot;email&quot;</span><span class="p">)</span><span class="c1">#指明只需要User中的用户名和邮箱两个字段</span>
+    <span class="k">def</span> <span class="nf">clean_password1</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span><span class="c1">#内置函数，用于检验两个密码是否一致，该动作在执行is_valid()时执行</span>
+        <span class="n">cd</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">cleaned_data</span>
+        <span class="k">if</span> <span class="n">cd</span><span class="p">[</span><span class="s">&#39;password&#39;</span><span class="p">]</span><span class="o">!=</span><span class="n">cd</span><span class="p">[</span><span class="s">&#39;password1&#39;</span><span class="p">]:</span>
+            <span class="k">raise</span> <span class="n">forms</span><span class="o">.</span><span class="n">ValidationError</span><span class="p">(</span><span class="s">&#39;Password not match&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">cd</span><span class="p">[</span><span class="s">&#39;password1&#39;</span><span class="p">]</span>
+</pre></div>
+<strong>注意：以 <code>clean+属性名称</code> 命名的所创建的方法，会在对象执行is_valid()时执行</strong></p>
+<h5 id="tipsvalueerror-modelform-has-no-model-class-specified">Tips：ValueError: ModelForm has no model class specified<a class="headerlink" href="#tipsvalueerror-modelform-has-no-model-class-specified" title="Permanent link"></a></h5>
+<p>具体错误信息如下：</p>
+<blockquote>
+<p>File &ldquo;D:\PyCharm 2017.3\PyProjects\LearningDjango\mysite\account\views.py&rdquo;, line 49, in register</p>
+<p>user_form = RegistrationForm()</p>
+<p>File &ldquo;C:\Python36\lib\site-packages\django\forms\models.py&rdquo;, line 280, in <strong>init</strong></p>
+<p>raise ValueError(&lsquo;ModelForm has no model class specified.&rsquo;)</p>
+<p>ValueError: ModelForm has no model class specified.</p>
+</blockquote>
+<p>我百度了一番，就是在定义表单类时，继承自ModelForm的Form，没有指明我的model。
+<div class="codehilite"><pre><span class="k">class</span> <span class="nc">Meta</span><span class="p">:</span>
+    <span class="n">model</span><span class="o">=</span><span class="err">你的</span><span class="n">model</span>
+</pre></div>
+然后，我看了半天，没错model被我打成了mdel（我去 (⇀‸↼‶)。</p>
+<ul>
+<li>编写对应的视图函数</li>
+</ul>
+<p>用户注册的流程和登录是一样的，你可以返回去看看上一篇文章。</p>
+<div class="codehilite"><pre><span class="k">def</span> <span class="nf">register</span><span class="p">(</span><span class="n">request</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">request</span><span class="o">.</span><span class="n">method</span><span class="o">==</span><span class="s">&#39;POST&#39;</span><span class="p">:</span>
+        <span class="n">user_form</span><span class="o">=</span><span class="n">RegistrationForm</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">POST</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">user_form</span><span class="o">.</span><span class="n">is_valid</span><span class="p">():</span>
+            <span class="c1">#ModelForm类及其子类都有save方法，用于把数据写入数据库</span>
+            <span class="n">new_user</span><span class="o">=</span><span class="n">user_form</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="n">commit</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span><span class="c1">#commit=False：创建对象但并不写入数据库，因为下面还要设置密码，避免再一次写入效率降低</span>
+            <span class="n">new_user</span><span class="o">.</span><span class="n">set_password</span><span class="p">(</span><span class="n">user_form</span><span class="o">.</span><span class="n">cleaned_data</span><span class="p">[</span><span class="s">&#39;password&#39;</span><span class="p">])</span>
+            <span class="n">new_user</span><span class="o">.</span><span class="n">save</span><span class="p">()</span>
+            <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s">&#39;register successfully&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">HttpResponse</span><span class="p">(</span><span class="s">&quot;sorry,you can&#39;t register&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">user_form</span><span class="o">=</span><span class="n">RegistrationForm</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">render</span><span class="p">(</span><span class="n">request</span><span class="p">,</span><span class="s">&#39;account/register.html&#39;</span><span class="p">,{</span><span class="s">&#39;form&#39;</span><span class="p">:</span><span class="n">user_form</span><span class="p">})</span>
+</pre></div>
+
+<ul>
+<li>前端模板编写
+templates/account/register.html</li>
+</ul>
+<p><div class="codehilite"><pre><span class="p">{</span><span class="o">%</span><span class="n">extends</span> <span class="s">&#39;base.html&#39;</span><span class="o">%</span><span class="p">}</span>
+
+<span class="p">{</span><span class="o">%</span><span class="n">block</span> <span class="n">title</span><span class="o">%</span><span class="p">}</span><span class="err">用户注册</span><span class="p">{</span><span class="o">%</span><span class="n">endblock</span><span class="o">%</span><span class="p">}</span>
+
+<span class="p">{</span><span class="o">%</span><span class="n">load</span> <span class="n">staticfiles</span><span class="o">%</span><span class="p">}</span>
+
+<span class="p">{</span><span class="o">%</span><span class="n">block</span> <span class="n">content</span><span class="o">%</span><span class="p">}</span>
+<span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s">&quot;row text-center vertical-middle-sm&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="err">注册</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="err">如果你已经注册过，请点击</span> <span class="o">&lt;</span><span class="n">strong</span><span class="o">&gt;&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">&quot;/account/login/&quot;</span><span class="o">&gt;</span><span class="err">登录</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">strong</span><span class="o">&gt;&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="err">否则请注册</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="n">form</span> <span class="n">action</span><span class="o">=</span><span class="s">&quot;.&quot;</span> <span class="n">class</span><span class="o">=</span><span class="s">&quot;form-horizontal&quot;</span> <span class="n">method</span><span class="o">=</span><span class="s">&quot;post&quot;</span><span class="o">&gt;</span>
+        <span class="p">{</span><span class="o">%</span><span class="n">csrf_token</span><span class="o">%</span><span class="p">}</span>
+        <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s">&quot;form-group&quot;</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">label</span> <span class="k">for</span><span class="o">=</span><span class="s">&quot;{{form.username.id_for_label}}&quot;</span> <span class="n">class</span><span class="o">=</span><span class="s">&quot;col-md-5 control-label&quot;</span><span class="o">&gt;</span><span class="err">用户名</span><span class="o">&lt;/</span><span class="n">label</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s">&quot;col-md-6 text-left&quot;</span><span class="o">&gt;</span><span class="p">{{</span><span class="n">form</span><span class="o">.</span><span class="n">username</span><span class="p">}}</span><span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s">&quot;form-group&quot;</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">label</span> <span class="k">for</span><span class="o">=</span><span class="s">&quot;{{form.email.id_for_label}}&quot;</span> <span class="n">class</span><span class="o">=</span><span class="s">&quot;col-md-5 control-label&quot;</span><span class="o">&gt;</span><span class="err">邮箱</span><span class="o">&lt;/</span><span class="n">label</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s">&quot;col-md-6 text-left&quot;</span><span class="o">&gt;</span><span class="p">{{</span><span class="n">form</span><span class="o">.</span><span class="n">email</span><span class="p">}}</span><span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s">&quot;form-group&quot;</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">label</span> <span class="k">for</span><span class="o">=</span><span class="s">&quot;{{form.password.id_for_label}}&quot;</span> <span class="n">class</span><span class="o">=</span><span class="s">&quot;col-md-5 control-label&quot;</span><span class="o">&gt;</span><span class="err">密码</span><span class="o">&lt;/</span><span class="n">label</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s">&quot;col-md-6 text-left&quot;</span><span class="o">&gt;</span><span class="p">{{</span><span class="n">form</span><span class="o">.</span><span class="n">password</span><span class="p">}}</span><span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s">&quot;form-group&quot;</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">label</span> <span class="k">for</span><span class="o">=</span><span class="s">&quot;{{form.password.id_for_label}}&quot;</span> <span class="n">class</span><span class="o">=</span><span class="s">&quot;col-md-5 control-label&quot;</span><span class="o">&gt;</span><span class="err">确认密码</span><span class="o">&lt;/</span><span class="n">label</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">div</span> <span class="n">class</span><span class="o">=</span><span class="s">&quot;col-md-6 text-left&quot;</span><span class="o">&gt;</span><span class="p">{{</span><span class="n">form</span><span class="o">.</span><span class="n">password1</span><span class="p">}}</span><span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="nb">input</span> <span class="nb">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="n">class</span><span class="o">=</span><span class="s">&quot;btn btn-primary&quot;</span> <span class="n">value</span><span class="o">=</span><span class="s">&quot;REGISTER&quot;</span><span class="o">&gt;</span>
+    <span class="o">&lt;/</span><span class="n">form</span><span class="o">&gt;</span>
+<span class="o">&lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+<span class="p">{</span><span class="o">%</span><span class="n">endblock</span><span class="o">%</span><span class="p">}</span>
+</pre></div>
+你同样可以在头模板（head.html）处添加注册选项
+- 配置url
+<code>url(r'^register/&amp;',views.register,name='user_register')</code></p>
+<p>尝试一下，刷新后注册，成功了，如图。
+<img alt="如图" src="D:\火狐软件下载目录\Markdown汇总\MD图片\register.png" />
+<img src="D:\火狐软件下载目录\Markdown汇总\MD图片\register.png" width="200px"></p></article></body></html>
